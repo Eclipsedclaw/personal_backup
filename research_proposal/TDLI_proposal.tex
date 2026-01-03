@@ -1,0 +1,77 @@
+%------------------------------------------------------------------------------
+% SIMPLE TEMPLATE FOR P1 SCIENTIFIC JUSTIFICATION
+%
+% This LaTeX2e template is to be compiled with pdflatex.
+% Import the resulting pdf file in the P1 interface.
+%
+% Do not tamper with the settings; changing the font size,
+% margins, etc... may result in the proposal not being 
+% considered.
+% 
+
+\documentclass[11pt,letterpaper]{article}
+\usepackage[parfill]{parskip} % Remove paragraph indentation
+\usepackage{array} % Required for boldface (\bf and \bfseries) tabular columns
+\usepackage{ifthen} % Required for ifthenelse statements
+\usepackage{hyperref}
+
+\pagestyle{empty} % Suppress page numbers
+
+% Set margins
+\usepackage[a4paper, top=1cm, bottom=1cm, left=0.7cm, right=1.3cm]{geometry}
+
+% Remove font settings for Arial
+% \renewcommand{\familydefault}{\sfdefault}
+% \usepackage{helvet}
+% \renewcommand{\rmdefault}{phv}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{anyfontsize}
+
+% Set paragraph spacing
+\setlength{\parskip}{5pt}
+\setlength{\parindent}{0pt}
+
+% Package for including graphics
+\usepackage{graphicx}
+
+% Package for color
+\usepackage[dvipsnames]{xcolor}
+\definecolor{customblue}{RGB}{0, 122, 204}
+
+% Defines the rSection environment for the large sections within the CV
+\newenvironment{rSection}[1]{
+  \sectionskip
+  {\Large \textbf{\textcolor{Blue}{\MakeUppercase{#1}}}} % Change font size, make it bold, and color it
+  \hrule % Horizontal line
+  \begin{list}{}{ % List for each individual item in the section
+    \setlength{\leftmargin}{1.5em} % Margin within the section
+  }
+  \item[]
+}{
+  \end{list}
+}
+
+
+\begin{document}
+
+
+%------------------------------------------------------------------------------
+
+\begin{rSection}{RESEACH PROPOSAL for Jiancheng(J.C) Zeng}
+\vspace{0.25cm}
+% science innovation and passion about the opportunity
+As an postdoctoral researcher, I intend to pursue an exciting research program in experimental astro-particle physics, building on my research contributions to \textbf{future TPC detector R$\&$D}, \textbf{cosmic MeV Gamma-ray observations} and \textbf{indirect dark matter searches}  over the past three years. 
+
+Gamma-ray observations in the unexplored MeV region hold the potential to revolutionize our understanding of some of the Universe’s most extreme astrophysical phenomena. These observations could reveal the powerful relativistic flows from stellar-mass black holes, the activity of supermassive black holes in active galactic nuclei, and the intense behavior of neutron stars, including radio pulsars and magnetars. Additionally, gamma-ray lines from radioactive isotopes provide insights into nucleosynthesis and the processes shaping the Galactic Center, classical Novae, and the cosmic origins of heavy elements. At the same time, indirect dark matter searches have become increasingly popular since the early 2000s. Indirect dark matter (DM) searches take advantage of existing multiwavelength/multi-messenger ensembles of cosmic particle observatories that are designed to study astrophysical phenomena that can test DM properties over a vast range of DM candidate masses. Since indirect searches do not require that DM interact directly inside the detector, they can probe cosmic DM over enormous time/length scales across the Universe and have unique sensitivity to properties such as DM lifetime. 
+
+Recent advancements in detector instrumentation have revitalized interest in MeV gamma-ray science missions. On that front, Columbia has been a leading collaborator on the Gamma-Ray and AntiMatter Survey (GRAMS) experiment~\href{https://www.sciencedirect.com/science/article/pii/S0927650519300805?via%3Dihub#preview-section-abstract}{[1]}, recently recognized as one of NASA's ``Physics of the Cosmos'' missions. GRAMS will use Liquid Argon Time Projection Chamber (LArTPC) technology for the detection of both MeV gamma rays and cosmic charged particles such as antinucleons or antinuclei from DM annihilation, serving both as a gamma-ray telescope and an indirect DM search experiment. With low detection thresholds and excellent energy and spatial resolution, GRAMS promises unprecedented sensitivity into the ``MeV gap'' and competitive sensitivity to DM parameter space. Currently, GRAMS is going through a rapid R$\&$D phase that will culminate into the first GRAMS prototype flight (pGRAMS) planned for fall 2025, followed by an intense design period for the first GRAMS science flight, anticipated as early as 5 years from now. Over the past year, I have been serving as the pGRAMS Subsystem Integration Coordinator and leader of the pGRAMS LArTPC detector design.
+
+In recent years, China has played a leading role in DM searches. Shanghai Jiao Tong University has always being a leading institution in this field. I will apply my expertise in DM physics and TPC to deliver the R$\&$D result as well as the future TPC DM signal measurement. 
+    
+\end{rSection}
+
+% Use same format as CV to make them complete. One year fellowship with 2 additional years depending on cases. Should demonstrate the first year's accomplishment
+
+\end{document}

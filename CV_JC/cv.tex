@@ -1,0 +1,289 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Medium Length Professional CV
+% LaTeX Template
+% Version 2.0 (8/5/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Trey Hunner (http://www.treyhunner.com/)
+%
+% Important note:
+% This template requires the resume.cls file to be in the same directory as the
+% .tex file. The resume.cls file provides the resume style used for structuring the
+% document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{resume} % Use the custom resume.cls style
+\usepackage[dvipsnames]{xcolor}
+\usepackage[version=3]{mhchem} %Chemical compound expression
+\usepackage[left=0.5in,top=0.6in,right=0.6in,bottom=0.6in]{geometry} % Document margins
+\usepackage{tikz} % Required for adding rounded corners to text
+\usepackage{hyperref}
+
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
+\newcommand{\itab}[1]
+{\hspace{0em}\rlap{#1}}
+\name{Jiancheng(J.C) Zeng} % Your name
+\address{\\ JCZeng1412@gmail.com \\ 857-930-3319 \\ Boston, MA} % Your phone number and email
+
+
+\renewenvironment{rSection}[1]{
+\sectionskip
+\textcolor{Blue}{\MakeUppercase{\bf #1}}
+\sectionlineskip
+\hrule
+\begin{list}{}{
+\setlength{\leftmargin}{1.5em}
+}
+\item[]
+}{
+\end{list}
+}
+
+\begin{document}
+%----------------------------------------------------------------------------------------
+%	Summary
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Summary}
+Currently pursuing a Ph.D.~in Physics with a strong background in astro-particle physics, data analysis, instrumentation, and collaborative team management. Aspiring a successful career in academia with a leading research program in astro-particle physics, bridging physics analysis methods with novel instrumentation development for next-generation experiments. 
+
+\end{rSection}
+
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Education}
+{\bf Northeastern University, Boston, MA, USA} \hfill {\em 2018-Present} 
+\\  Ph.D. in Physics, expected Summer 2025, GPA 3.5/4 \hfill
+\\ Graduate Certificate in Physics \hfill
+
+{\bf Sun Yat‑sen University, Guangzhou, Guangdong, China} \hfill {\em 2014-2018} 
+\\ Bachelor of Physics, GPA 3.2/4 \hfill
+
+\end{rSection}
+
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Research Experience}
+
+%------------------------------------------------
+
+\begin{rSubsubsectionTitle}{Graduate Researcher, Northeastern University}{}{}{}
+\item 
+
+    \begin{rSubsubsection}{Gamma-Ray and AntiMatter Survey (GRAMS), NASA APRA Project}{Mar 2021 - Present}{}{}
+    \item \textit{Leadership role(s): GRAMS prototype flight (pGRAMS) Subsystem Integration Coordinator}
+    \item Leading collaborative efforts in preparation of pGRAMS launch scheduled in Fall 2025. 
+    \item Designed and fabricated pGRAMS time projection chamber (TPC) charge-sensitive amplifiers. 
+    \item Designed mechanical CAD of the pGRAMS TPC detector. 
+    \item Fabricated TPC and set up Chamber environment for Liquid Argon TPC operations. 
+    \item Simulated the pGRAMS TPC static electric field. 
+    \item Worked on Geant4 simulations for GRAMS. \item Developed GRAMS AntiDeuteron and AntiHelium3 sensitivity. 
+    \end{rSubsubsection}
+
+    \begin{rSubsubsection}{General AntiParticle Spectrometer (GAPS), NASA APRA Project}{Mar 2021 - Present}{}{}
+    \item Assembled GAPS functional prototype (GFP) at MIT Bates Lab, improvised GAPS thermal system and constructed simulation model for GFP.  
+    \item Integrated GAPS payload at MIT Bates Lab, UCB Space Science lab and Columbia Nevis Labs. Assembled detector tracker, time of flight and cooling system. 
+    \item Developed ground cooling system for GAPS to cool down all detectors to $ -40^\circ C $. 
+    \item Developed software for detector performance visualization. 
+    \item Developed GAPS atmospheric unfolding model and analysis.
+    \end{rSubsubsection}
+    
+    \begin{rSubsubsection}{Two-photon Excitation Microscopy}{Sept 2018 - Feb 2021}{}{}
+    \item Designed FPGA-based data acquisition system (DAQ) and data down-sampling algorithm using StellarIP and Vivado and calibrated a 32-channels firmware for the FPGA output. It is used as back-End of Two-photon excitation microscopy scanning for cancer. 
+
+    \end{rSubsubsection}
+
+
+\end{rSubsubsectionTitle}
+
+%------------------------------------------------
+
+\begin{rSubsubsectionTitle}{Undergraduate Researcher, Sun Yat‑sen University}{2014 - 2018}{}{}
+\item 
+
+    \begin{rSubsubsection}{Heavy Flavor Bosons Decay Simulation for PHENIX Experiment}{}{}{}
+    \item Simulated B and D bosons passing through four detector planes, and used the asymmetry of the muon detected on the detector planes to determine the initial boson ratio.
+    \end{rSubsubsection}
+    \begin{rSubsubsection}{Galaxies, Cosmology, and Structure Formation Simulation}{}{}{}
+    \item Simulated galaxy formation using GADGET-2
+    \end{rSubsubsection}
+    \begin{rSubsection}{Radioactivity Measurement in Environment}{2018}{}{}
+    \item Measured the $\gamma$ spectra of the soil in different positions in Guangzhou by $\gamma$ spectrometry. 
+    \item Calculated the Th, Ra and K activities of the research samples via inverse matrix method.
+    \item Measured radioactivity profile of  different samples by field sampling and comparative measurement.\hfill
+    \end{rSubsection}
+
+\end{rSubsubsectionTitle}
+
+\end{rSection}
+
+
+%----------------------------------------------------------------------------------------
+%	Teaching Experience SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Teaching Experience} \itemsep -2pt
+%------------------------------------------------
+
+\begin{rSubsection}{Teaching Assistant Fellowship at Northeastern University}{2020-2021}{}{}
+\item Worked as Teaching Assistant in the physics department for two years. Taught Introductory Physics Laboratory (IPL) and lead the undergraduate physics interactive learning session (ILS). Also worked as grader and course teaching assistant for modern physics class.
+\end{rSubsection}
+
+\begin{rSubsection}{Teaching Assistant on Molecular Imaging}{July, 2019}{}{}
+\item Worked as Teaching Assistant for Professor Craig S.~Levin (Department of Radiology, Stanford). Gave lectures on bioluminescence fluorescence imaging and two-photon microscopy.
+\end{rSubsection}
+
+\begin{rSubsection}{Teaching Assistant on Cosmology and Structure Formation}{July-August, 2018}{}{}
+\item Worked as Teaching Assistant for Professor Mark Vogelsberger (MIT Kavli Institute for Astrophysics and Space Research). Gave lectures on calculus and introduction to coding using python.\hfill
+
+\end{rSubsection}
+%------------------------------------------------
+
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	TECHNICAL STRENGTHS SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Skills}
+
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{2ex}} l }
+Computing &  \textit{Programming:} Python, Geant4, Bash, Root, MATLAB, Unix, FPGA, Git, mysql, \LaTeX \\
+&  \textit{Visualization:} Matplotlib, Adobe Photoshop, Grafana, Bambu Studio(3D printing), vnc, \\ & HepRApp, meshlab, femtet \\
+&  \textit{Engineering tools:} Solidworks, Autodesk Fusion 360, Autodesk Eagle/EasyEDA \\
+& \textit{Machine learning:} PyTorch\\
+
+Laboratory & \textit{Onsite related:} Compressor operation and maintenance, piping, cryogenic (LAr, LN2) system \\ & operation, crane and gantry operation, strapping and roping,  \\
+& \textit{Physics lab:} Oscilloscope, lock-in amplifier, PCB population \\
+
+\end{tabular}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	ACHIEVEMENTS SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Honors} \itemsep -2pt
+{``Best Talk'' at Intro to Physics Seminar at Northeastern University}\hfill {\em 2022} \\
+{``Lawrence Award for Excellence in Teaching'' at Northeastern University} \hfill {\em 2020} \\
+{``Excellent Student Scholarship'' due to academic excellence at Sun Yat-sen University,}\hfill {\em 2014}
+\end{rSection}
+
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{PUBLICATIONS} \itemsep -2pt
+
+%\begin{itemize}
+
+    %\item 
+    {[1]} \textbf{AntiHelium3 Sensitivity for the GRAMS Experiment}\\
+    J.C Zeng \textit{et al., manuscript accepted.}\\
+    \textit{https://doi.org/10.1016/j.astropartphys.2025.103152}\\
+  \textit{ Lead author contributions:} Leading the simulation and analysis for the sensitivity estimation for the GRAMS experiment.
+
+    %\item 
+    {[2]} \textbf{Tracking Charged Particles with Liquid Argon Time Projection Chamber}\\
+    J.C Zeng \textit{et al., manuscript in preparation.}\\
+    \textit{ Lead author contributions:} Leading the particle tracking reconstruction and analysis for the GRAMS detector prototype in the lab.
+    
+    %\item 
+    {[3]} \textbf{Sensitivity of the GAPS experiment to low‑energy cosmic‑ray antiprotons}\\
+    F.~Rogers \textit{et al.} \\
+    \textit{Astroparticle Physics}, 145 (2023), p. 102791.\\
+    \textit{ Lead author contributions:} Leading the atmospheric unfolding analysis for the antiproton analysis.
+    
+    %\item 
+    {[4]} \textbf{Reconstruction of multiple Compton scattering events in MeV gamma‑ray Compton telescopes towards GRAMS: The physics‑based probabilistic model}\\
+    Hiroki Yoneda \textit{et al.}\\
+    \textit{Astroparticle Physics}, 144 (2023), p. 102765.
+
+    %\item 
+    {[5]} \textbf{First operation of LArTPC in the stratosphere as an engineering GRAMS balloon flight (eGRAMS)} \\
+    R.~Nakajima \textit{et al.}\\
+    \textit{\url{https://inspirehep.net/literature/2831161}}\\
+    \textit{Contributions:} Designed and provided charge readout electronics for the eGRAMS flight mission.
+
+    %\item 
+    {[6]} \textbf{Development of Charge sensitive detectors for the GRAMS experiment} \\
+    A.~Suraj \textit{et al., in preparation}\\
+   \textit{ Lead author contributions:} Leading the charge sensitive preamp and detector design, as well as the fabrication and calibration of the system.
+
+    %\item 
+    {[7]} \textbf{Development of cryogenic SiPM based light readout system for the GRAMS experiment} \\
+    J.~LeyVa \textit{et al., in preparation.}\\
+    \textit{Contributions:}  Worked on SiPM testing and PCB board fabrication
+
+    %\item 
+    {[8]} \textbf{The GAPS experiment - a search for light cosmic ray antinuclei} \\
+    Ghislotti L \textit{et al.}\\
+    \textit{POS PROCEEDINGS OF SCIENCE 444}, 1-8\\
+    \textit{Contributions:}  Worked on payload construction and simulation modeling
+
+
+%\end{itemize}
+
+\end{rSection}
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	Talks and Presentations SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Talks and Presentations} \itemsep -2pt
+
+%\begin{itemize}
+{[1]} \textbf{Gamma-Ray and AntiMatter survey(GRAMS) experiment} \\
+    \textit{the XIX International Conference on Topics in Astroparticle and Underground Physics (TAUP2025)}\\
+    \textit{\url{https://indico-cdex.ep.tsinghua.edu.cn/event/175/abstracts/581/}}
+
+{[2]} \textbf{Antinuclei Measurements by GRAMS} \\
+    \textit{\textbf{Invited talk} by NASA PhysPAG Cosmic-Ray and Neutrino Science Interest Group (CRN-SIG) Webinar }\\
+    \textit{\url{https://pcos.gsfc.nasa.gov/sigs/crsig/events/16-Apr-2025/crnsig-seminar-16-Apr-2025.php}}
+    
+{[3]} \textbf{Indirect Dark Matter Searches with GAPS Experiment} \\
+    \textit{Jiancheng Zeng on behalf of GAPS collaboration, at TeVPA 2024 at the University of Chicago}\\
+    \textit{\url{https://indico.uchicago.edu/event/427/contributions/1327/}}
+    
+{[4]} \textbf{Indirect Dark Matter Searches with GAPS and GRAMS} \\
+    \textit{Jiancheng Zeng at SYSU-PKU Collider Physics Forum for Young Scientists}\\
+    \textit{\url{https://indico.ihep.ac.cn/event/21330/}}
+
+{[5]} \textbf{AntiHelium-3 Search with the GRAMS Experiment} \\
+    \textit{ 38th International Cosmic Ray Conference (ICRC2023)}\\
+    \textit{\url{https://pos.sissa.it/444/1407/}}
+
+
+{[6]} \textbf{Indirect Dark Matter Searches with GAPS and GRAMS} \\
+    \textit{Northeastern Introduction to Research Seminar, April 13th, 2022}
+
+{[7]} \textbf{Overview of the GRAMS (Gamma-Ray and AntiMatter Survey) Project} \\
+    \textit{kashiwa DM symposium 2021}\\
+    \textit{\url{https://2021.kashiwa-darkmatter-symposia.org/posters.html}}
+
+
+%\end{itemize}
+
+\end{rSection}
+
+
+\end{document}
