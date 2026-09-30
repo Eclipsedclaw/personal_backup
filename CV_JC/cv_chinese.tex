@@ -1,0 +1,233 @@
+%----------------------------------------------------------------------------------------
+% 中文简历 -- Jiancheng (J.C.) Zeng
+% Chinese version of cv.tex; shares resume.cls, publications.bib and talks.bib with it.
+%
+% Build:  latexmk -xelatex cv_chinese.tex     (needs XeLaTeX for Chinese fonts)
+%
+% Publications and talks are printed from the same .bib files as the English CV,
+% so they stay in English (the usual convention for physics papers).
+%----------------------------------------------------------------------------------------
+
+\documentclass{resume}
+\usepackage[UTF8,fontset=mac]{ctex}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[left=0.5in,top=0.6in,right=0.6in,bottom=0.6in]{geometry}
+\usepackage{xurl}
+\usepackage{needspace} % keep subheadings with their first entry
+\usepackage[colorlinks=true,urlcolor=Blue,linkcolor=Blue]{hyperref}
+
+\linespread{1.05} % a little more room for Chinese characters
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\usepackage[
+  backend=bibtex,   % biber is broken on this machine; plain bibtex is enough here
+  style=phys,
+  articletitle=true,
+  biblabel=brackets,
+  eprint=true,
+  sorting=none,        % printed in the order entries appear in the .bib files (keep them newest first)
+  defernumbers=true,   % number each list separately
+  maxnames=1, minnames=1,
+  giveninits=true,
+]{biblatex}
+\addbibresource{publications.bib}
+\addbibresource{talks.bib}
+
+% Bold my name wherever it appears
+\renewcommand*{\mkbibnamefamily}[1]{\ifdefstring{\namepartfamily}{Zeng}{\textbf{#1}}{#1}}
+\renewcommand*{\mkbibnamegiven}[1]{\ifdefstring{\namepartfamily}{Zeng}{\textbf{#1}}{#1}}
+
+% "Contributions:" line under an entry (from the bib `addendum` field, which is in English)
+\DeclareFieldFormat{addendum}{\textit{Contributions:} #1}
+\renewbibmacro*{addendum+pubstate}{\setunit{\newline}\printfield{addendum}\newunit\printfield{pubstate}}
+\renewcommand*{\finentrypunct}{}  % no period at the end of entries
+% Talks (@misc): bold title / italic venue, date / link. Author is omitted -- it's always me.
+\DeclareFieldFormat[misc]{title}{\textbf{#1}}
+\DeclareFieldFormat[misc]{howpublished}{\textit{#1}}
+\DeclareBibliographyDriver{misc}{%
+  \ifkeyword{invited}{\textbf{特邀报告：}}{}%
+  \printfield{title}\newline
+  \printfield{howpublished}\setunit{\addcomma\space}%
+  \usebibmacro{date}%
+  \iffieldundef{url}{}{\newline\printfield{url}}%
+  \usebibmacro{finentry}}
+
+\setlength{\bibitemsep}{3pt}
+\defbibheading{cvsub}[]{\needspace{4\baselineskip}\vspace{2pt}\textbf{#1}\par\vspace{1pt}}
+% No visible heading; \leavevmode is needed so the labels of a list placed right
+% after the section's \item[] don't pile up
+\defbibheading{cvnone}[]{\leavevmode\par\vspace{-\baselineskip}}
+
+%----------------------------------------------------------------------------------------
+%	HEADER AND SECTION STYLE
+%----------------------------------------------------------------------------------------
+
+% TODO: put your name in Chinese characters here, e.g. \name{曾XX \quad Jiancheng Zeng}
+\name{Jiancheng (J.C.) Zeng}
+\address{\\ \href{mailto:JCZeng1412@gmail.com}{JCZeng1412@gmail.com} \\ 857-930-3319 \\ 美国马萨诸塞州波士顿}
+
+% Blue section titles
+\renewenvironment{rSection}[1]{
+  \sectionskip
+  \textcolor{Blue}{\bf #1}
+  \sectionlineskip
+  \hrule
+  \begin{list}{}{\setlength{\leftmargin}{1.5em}}
+  \item[]
+}{
+  \end{list}
+}
+
+\begin{document}
+\nocite{*}
+
+%----------------------------------------------------------------------------------------
+%	个人简介
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{个人简介}
+物理学博士，在天体粒子物理、数据分析、探测器仪器研制及团队协作管理方面具有扎实的背景。
+致力于在学术界建立并领导天体粒子物理研究方向，将物理分析方法与新型探测器研制相结合，服务于下一代实验。
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	工作经历
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{工作经历}
+{\bf 博士后研究员}，上海交通大学李政道研究所 \hfill {\em 2026年7月 -- 至今} \\
+{\small 暗物质物理全国重点实验室；粒子天体物理与宇宙学教育部重点实验室；上海市粒子物理与宇宙学重点实验室} \hfill 中国上海
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	教育背景
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{教育背景}
+{\bf 美国东北大学（Northeastern University）}，美国马萨诸塞州波士顿 \hfill {\em 2018 -- 至今} \\
+物理学博士，预计2025年夏季毕业 \hfill GPA 3.5/4.0 \\
+物理学研究生证书（Graduate Certificate in Physics）
+
+{\bf 中山大学}，中国广东广州 \hfill {\em 2014 -- 2018} \\
+物理学学士 \hfill GPA 3.2/4.0
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	科研经历
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{科研经历}
+
+\begin{rSubsubsectionTitle}{研究生研究员，美国东北大学}{2018 -- 至今}{}{}
+\item
+
+  \begin{rSubsubsection}{伽马射线与反物质巡天实验（GRAMS），NASA APRA项目}{2021年3月 -- 至今}{}{}
+  \item \textit{领导职务：GRAMS原型气球飞行（pGRAMS）子系统集成协调人}
+  \item 牵头协调pGRAMS发射（原定2025年秋季）的各项准备工作。
+  \item 设计并制作pGRAMS时间投影室（TPC）的电荷灵敏放大器。
+  \item 完成pGRAMS TPC探测器的机械CAD设计。
+  \item 制作TPC，并搭建液氩TPC运行所需的腔体环境。
+  \item 模拟pGRAMS TPC的静电场分布。
+  \item 开发GRAMS的Geant4模拟，并完成GRAMS反氘及反氦-3灵敏度研究。
+  \end{rSubsubsection}
+
+  \begin{rSubsubsection}{通用反粒子谱仪实验（GAPS），NASA APRA项目}{2021年3月 -- 至今}{}{}
+  \item 在麻省理工学院Bates实验室组装GAPS功能原型机（GFP），改进GAPS热控系统，并建立GFP模拟模型。
+  \item 在麻省理工学院Bates实验室、加州大学伯克利分校空间科学实验室及哥伦比亚大学Nevis实验室完成GAPS载荷集成；组装径迹探测器、飞行时间系统及冷却系统。
+  \item 研制GAPS地面冷却系统，将全部探测器冷却至$-40\,^\circ$C。
+  \item 开发探测器性能可视化软件。
+  \item 建立GAPS大气效应反演（unfolding）模型并完成相应分析。
+  \end{rSubsubsection}
+
+  \begin{rSubsubsection}{双光子激发显微成像}{2018年9月 -- 2021年2月}{}{}
+  \item 基于StellarIP与Vivado设计FPGA数据采集系统（DAQ）及数据降采样算法，并标定FPGA输出的32通道固件；该系统用作癌症双光子激发显微扫描成像的后端。
+  \end{rSubsubsection}
+
+\end{rSubsubsectionTitle}
+
+\begin{rSubsubsectionTitle}{本科生科研，中山大学}{2014 -- 2018}{}{}
+\item
+
+  \begin{rSubsubsection}{PHENIX实验重味介子衰变模拟}{}{}{}
+  \item 模拟B介子与D介子穿过四层探测器平面的过程，利用各平面探测到的$\mu$子不对称性确定初始介子比例。
+  \end{rSubsubsection}
+
+  \begin{rSubsubsection}{星系、宇宙学与结构形成模拟}{}{}{}
+  \item 使用GADGET-2模拟星系形成。
+  \end{rSubsubsection}
+
+\end{rSubsubsectionTitle}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	论文发表  (from publications.bib, split by `keywords`)
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{论文发表}
+\newrefcontext[labelprefix=L]
+\printbibliography[keyword=lead,    heading=cvsub, title={第一作者}, resetnumbers=true]
+\newrefcontext[labelprefix=C]
+\printbibliography[keyword=contrib, heading=cvsub, title={合作作者}, resetnumbers=true]
+\newrefcontext[labelprefix=M]
+\printbibliography[keyword=inprep,  heading=cvsub, title={撰写中}, resetnumbers=true]
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	学术报告  (from talks.bib)
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{学术报告}
+\newrefcontext[labelprefix=T]
+\printbibliography[type=misc, heading=cvnone, resetnumbers=true]
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	教学经历
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{教学经历}
+
+\begin{rSubsection}{助教奖学金（Teaching Assistant Fellowship），美国东北大学}{2020 -- 2021}{}{}
+\item 在物理系担任助教两年：讲授普通物理实验课（IPL），主持本科物理互动学习课（ILS），并担任近代物理课程助教及阅卷人。
+\end{rSubsection}
+
+\begin{rSubsection}{分子影像课程助教}{2019年7月}{}{}
+\item 担任Craig S.~Levin教授（斯坦福大学放射学系）的助教，讲授生物发光/荧光成像及双光子显微成像。
+\end{rSubsection}
+
+\begin{rSubsection}{宇宙学与结构形成课程助教}{2018年7月 -- 8月}{}{}
+\item 担任Mark Vogelsberger教授（麻省理工学院Kavli天体物理与空间研究所）的助教，讲授微积分及Python编程入门。
+\end{rSubsection}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	荣誉奖项
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{荣誉奖项}
+美国东北大学物理研究入门研讨会“最佳报告奖”（Best Talk） \hfill {\em 2022} \\
+美国东北大学Lawrence优秀教学奖（Lawrence Award for Excellence in Teaching） \hfill {\em 2020} \\
+中山大学优秀学生奖学金 \hfill {\em 2014}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	专业技能
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{专业技能}
+\begin{tabular}{@{} >{\bfseries}l @{\hspace{2ex}} p{0.8\textwidth} @{}}
+计算机   & \textit{编程：}Python, Geant4, ROOT, Bash, MATLAB, Unix, FPGA, Git, MySQL, \LaTeX \\
+         & \textit{可视化：}Matplotlib, Grafana, HepRApp, MeshLab, Femtet, VNC, Adobe Photoshop, Bambu Studio（3D打印） \\
+         & \textit{工程软件：}SolidWorks, Autodesk Fusion 360, Autodesk Eagle / EasyEDA \\
+         & \textit{机器学习：}PyTorch \\[3pt]
+实验技能 & \textit{现场操作：}压缩机操作与维护、管路安装、低温（液氩、液氮）系统操作、吊车与龙门架操作、捆扎与绳索作业 \\
+         & \textit{物理实验：}示波器、锁相放大器、PCB焊接组装 \\
+\end{tabular}
+\end{rSection}
+
+\end{document}

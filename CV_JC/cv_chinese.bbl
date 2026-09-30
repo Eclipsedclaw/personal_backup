@@ -1,0 +1,547 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{none/global//global/global/global}
+  \entry{Zeng:2025chz}{article}{}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{1}{}{%
+      {{hash=ZJ}{%
+         family={Zeng},
+         familyi={Z\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \keyw{lead}
+    \strng{namehash}{ZJ+1}
+    \strng{fullhash}{ZJ+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{Led the simulation and analysis for the GRAMS antihelium-3
+  sensitivity estimate.}
+    \verb{doi}
+    \verb 10.1016/j.astropartphys.2025.103152
+    \endverb
+    \verb{eprint}
+    \verb 2503.16694
+    \endverb
+    \field{pages}{103152}
+    \field{title}{{Antihelium-3 sensitivity for the GRAMS experiment}}
+    \field{volume}{173}
+    \field{journaltitle}{Astropart. Phys.}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{hep-ex}
+    \field{year}{2025}
+  \endentry
+
+  \entry{GRAMS:2025ljc}{inproceedings}{}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{1}{}{%
+      {{hash=ZJ}{%
+         family={Zeng},
+         familyi={Z\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \keyw{lead}
+    \strng{namehash}{ZJ+1}
+    \strng{fullhash}{ZJ+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{Lead author of the conference proceedings.}
+    \field{booktitle}{{19th International Conference on Topics in Astroparticle
+  and Underground Physics (TAUP2025)}}
+    \verb{eprint}
+    \verb 2512.14913
+    \endverb
+    \field{title}{{Gamma-Ray and AntiMatter Survey (GRAMS) experiment}}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{hep-ex}
+    \field{year}{2025}
+  \endentry
+
+  \entry{TAKASHIMA2026171858}{article}{}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{1}{}{%
+      {{hash=TS}{%
+         family={Takashima},
+         familyi={T\bibinitperiod},
+         given={Satoshi},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \keyw{contrib}
+    \strng{namehash}{TS+1}
+    \strng{fullhash}{TS+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{Designed and provided the charge readout electronics for
+  the NanoGRAMS project.}
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.nima.2026.171858
+    \endverb
+    \field{issn}{0168-9002}
+    \field{pages}{171858}
+    \field{title}{Low-noise SiPM light readout and ASIC-based charge readout of
+  a liquid argon time projection chamber for MeV gamma-ray measurements}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S016890022600584X
+    \endverb
+    \field{volume}{1092}
+    \field{journaltitle}{Nuclear Instruments and Methods in Physics Research
+  Section A: Accelerators, Spectrometers, Detectors and Associated Equipment}
+    \field{year}{2026}
+  \endentry
+
+  \entry{sun2026developmentnovelcomptoncamera}{article}{}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{1}{}{%
+      {{hash=SP}{%
+         family={Sun},
+         familyi={S\bibinitperiod},
+         given={Pingwei},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \keyw{contrib}
+    \strng{namehash}{SP+1}
+    \strng{fullhash}{SP+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{Designed and provided the consultation for the development
+  of the novel Compton camera.}
+    \verb{eprint}
+    \verb 2608.21216
+    \endverb
+    \field{title}{{Development of A Novel Compton Camera for MeV Gamma-Ray
+  Measurement in Space}}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{astro-ph.IM}
+    \field{year}{2026}
+  \endentry
+
+  \entry{Nakajima:2024fgx}{article}{}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{1}{}{%
+      {{hash=NR}{%
+         family={Nakajima},
+         familyi={N\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \keyw{contrib}
+    \strng{namehash}{NR+1}
+    \strng{fullhash}{NR+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{Designed and provided the charge readout electronics for
+  the eGRAMS flight.}
+    \verb{doi}
+    \verb 10.1093/ptep/ptae179
+    \endverb
+    \verb{eprint}
+    \verb 2409.13209
+    \endverb
+    \field{number}{12}
+    \field{pages}{123F01}
+    \field{title}{{First Operation of a Liquid Argon Time Projection Chamber
+  (LArTPC) in the Stratosphere as an Engineering Gamma-Ray and AntiMatter
+  Survey (GRAMS) Balloon Flight (eGRAMS)}}
+    \field{volume}{2024}
+    \field{journaltitle}{PTEP}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{astro-ph.IM}
+    \field{year}{2024}
+  \endentry
+
+  \entry{GAPS:2022ncd}{article}{}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{1}{}{%
+      {{hash=RF}{%
+         family={Rogers},
+         familyi={R\bibinitperiod},
+         given={F.},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \keyw{contrib}
+    \strng{namehash}{RF+1}
+    \strng{fullhash}{RF+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{Led the atmospheric unfolding analysis for the antiproton
+  sensitivity.}
+    \verb{doi}
+    \verb 10.1016/j.astropartphys.2022.102791
+    \endverb
+    \verb{eprint}
+    \verb 2206.12991
+    \endverb
+    \field{pages}{102791}
+    \field{title}{{Sensitivity of the GAPS experiment to low-energy cosmic-ray
+  antiprotons}}
+    \field{volume}{145}
+    \field{journaltitle}{Astropart. Phys.}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{astro-ph.HE}
+    \field{year}{2023}
+  \endentry
+
+  \entry{Yoneda:2021vct}{article}{}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{1}{}{%
+      {{hash=YH}{%
+         family={Yoneda},
+         familyi={Y\bibinitperiod},
+         given={Hiroki},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \keyw{contrib}
+    \strng{namehash}{YH+1}
+    \strng{fullhash}{YH+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1016/j.astropartphys.2022.102765
+    \endverb
+    \verb{eprint}
+    \verb 2107.01846
+    \endverb
+    \field{pages}{102765}
+    \field{title}{{Reconstruction of multiple Compton scattering events in MeV
+  gamma-ray Compton telescopes towards GRAMS: The physics-based probabilistic
+  model}}
+    \field{volume}{144}
+    \field{journaltitle}{Astropart. Phys.}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{astro-ph.IM}
+    \field{year}{2023}
+  \endentry
+
+  \entry{Ghislotti:2023gaps}{inproceedings}{}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{1}{}{%
+      {{hash=GL}{%
+         family={Ghislotti},
+         familyi={G\bibinitperiod},
+         given={L.},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \keyw{contrib}
+    \strng{namehash}{GL+1}
+    \strng{fullhash}{GL+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{Worked on payload construction and simulation modeling.}
+    \field{booktitle}{{38th International Cosmic Ray Conference (ICRC2023)}}
+    \field{series}{PoS}
+    \field{title}{{The GAPS experiment -- a search for light cosmic ray
+  antinuclei}}
+    \field{volume}{444}
+    \field{year}{2023}
+  \endentry
+
+  \entry{GAPS:2026rda}{article}{}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{1}{}{%
+      {{hash=AK}{%
+         family={Aoyama},
+         familyi={A\bibinitperiod},
+         given={Kazutaka},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AK+1}
+    \strng{fullhash}{AK+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{eprint}
+    \verb 2604.19830
+    \endverb
+    \field{title}{{The General Antiparticle Spectrometer (GAPS) Antarctic
+  Balloon Payload}}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{astro-ph.IM}
+    \field{year}{2026}
+  \endentry
+
+  \entry{Zeng:inprep-pGRAMS}{unpublished}{}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{1}{}{%
+      {{hash=ZJ}{%
+         family={Zeng},
+         familyi={Z\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \keyw{inprep}
+    \strng{namehash}{ZJ+1}
+    \strng{fullhash}{ZJ+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{Lead author; leading the pGRAMS project.}
+    \field{note}{manuscript in preparation}
+    \field{title}{{A Stratospheric Liquid Argon Time Projection Chamber: The
+  prototype Gamma-Ray and AntiMatter Survey (pGRAMS) Balloon Payload}}
+    \field{year}{2026}
+  \endentry
+
+  \entry{Zeng:inprep-tracking}{unpublished}{}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{1}{}{%
+      {{hash=ZJ}{%
+         family={Zeng},
+         familyi={Z\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \keyw{inprep}
+    \strng{namehash}{ZJ+1}
+    \strng{fullhash}{ZJ+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{Lead author; leading the particle-tracking reconstruction
+  and analysis for the GRAMS lab prototype.}
+    \field{note}{manuscript in preparation}
+    \field{title}{{Tracking Charged Particles with a Liquid Argon Time
+  Projection Chamber}}
+    \field{year}{2026}
+  \endentry
+
+  \entry{Suraj:inprep-csa}{unpublished}{}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{1}{}{%
+      {{hash=SA}{%
+         family={Suraj},
+         familyi={S\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \keyw{inprep}
+    \strng{namehash}{SA+1}
+    \strng{fullhash}{SA+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{Leading the charge-sensitive preamplifier and detector
+  design, fabrication, and calibration.}
+    \field{note}{in preparation}
+    \field{title}{{Development of Charge Sensitive Detectors for the GRAMS
+  Experiment}}
+    \field{year}{2026}
+  \endentry
+
+  \entry{Leyva:inprep-sipm}{unpublished}{}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{1}{}{%
+      {{hash=LJ}{%
+         family={Leyva},
+         familyi={L\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \keyw{inprep}
+    \strng{namehash}{LJ+1}
+    \strng{fullhash}{LJ+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{SiPM testing and PCB fabrication.}
+    \field{note}{in preparation}
+    \field{title}{{Development of a Cryogenic SiPM-Based Light Readout System
+  for the GRAMS Experiment}}
+    \field{year}{2026}
+  \endentry
+
+  \entry{talk:taup2025}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=ZJ}{%
+         family={Zeng},
+         familyi={Z\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZJ1}
+    \strng{fullhash}{ZJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{XIX International Conference on Topics in
+  Astroparticle and Underground Physics (TAUP2025)}
+    \field{title}{{Gamma-Ray and AntiMatter Survey (GRAMS) experiment}}
+    \verb{url}
+    \verb https://indico-cdex.ep.tsinghua.edu.cn/event/175/abstracts/581/
+    \endverb
+    \field{month}{08}
+    \field{year}{2025}
+  \endentry
+
+  \entry{talk:crnsig2025}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=ZJ}{%
+         family={Zeng},
+         familyi={Z\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \keyw{invited}
+    \strng{namehash}{ZJ1}
+    \strng{fullhash}{ZJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{NASA PhysPAG Cosmic-Ray and Neutrino Science Interest
+  Group (CRN-SIG) Webinar}
+    \field{title}{{Antinuclei Measurements by GRAMS}}
+    \verb{url}
+    \verb https://pcos.gsfc.nasa.gov/sigs/crsig/events/16-Apr-2025/crnsig-semin
+    \verb ar-16-Apr-2025.php
+    \endverb
+    \field{month}{04}
+    \field{year}{2025}
+  \endentry
+
+  \entry{talk:tevpa2024}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=ZJ}{%
+         family={Zeng},
+         familyi={Z\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZJ1}
+    \strng{fullhash}{ZJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{TeVPA 2024, University of Chicago (on behalf of the
+  GAPS collaboration)}
+    \field{title}{{Indirect Dark Matter Searches with the GAPS Experiment}}
+    \verb{url}
+    \verb https://indico.uchicago.edu/event/427/contributions/1327/
+    \endverb
+    \field{month}{08}
+    \field{year}{2024}
+  \endentry
+
+  \entry{talk:sysupku}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=ZJ}{%
+         family={Zeng},
+         familyi={Z\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZJ1}
+    \strng{fullhash}{ZJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{SYSU-PKU Collider Physics Forum for Young Scientists}
+    \field{title}{{Indirect Dark Matter Searches with GAPS and GRAMS}}
+    \verb{url}
+    \verb https://indico.ihep.ac.cn/event/21330/
+    \endverb
+    \field{month}{01}
+    \field{year}{2024}
+  \endentry
+
+  \entry{talk:icrc2023}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=ZJ}{%
+         family={Zeng},
+         familyi={Z\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZJ1}
+    \strng{fullhash}{ZJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{38th International Cosmic Ray Conference (ICRC2023)}
+    \field{title}{{AntiHelium-3 Search with the GRAMS Experiment}}
+    \verb{url}
+    \verb https://pos.sissa.it/444/1407/
+    \endverb
+    \field{month}{07}
+    \field{year}{2023}
+  \endentry
+
+  \entry{talk:neu2022}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=ZJ}{%
+         family={Zeng},
+         familyi={Z\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZJ1}
+    \strng{fullhash}{ZJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{Northeastern University Introduction to Research
+  Seminar}
+    \field{title}{{Indirect Dark Matter Searches with GAPS and GRAMS}}
+    \field{month}{04}
+    \field{year}{2022}
+  \endentry
+
+  \entry{talk:kashiwa2021}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=ZJ}{%
+         family={Zeng},
+         familyi={Z\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZJ1}
+    \strng{fullhash}{ZJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{Kashiwa Dark Matter Symposium 2021}
+    \field{title}{{Overview of the GRAMS (Gamma-Ray and AntiMatter Survey)
+  Project}}
+    \verb{url}
+    \verb https://2021.kashiwa-darkmatter-symposia.org/posters.html
+    \endverb
+    \field{year}{2021}
+  \endentry
+\enddatalist
+\endinput
