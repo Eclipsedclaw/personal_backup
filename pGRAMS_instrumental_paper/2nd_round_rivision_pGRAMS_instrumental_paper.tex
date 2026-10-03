@@ -1,0 +1,764 @@
+                     %% 
+%% Copyright 2019-2024 Elsevier Ltd
+%% 
+%% This file is part of the 'CAS Bundle'.
+%% --------------------------------------
+%% 
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.3c of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%% 
+%% The list of all files belonging to the 'CAS Bundle' is
+%% given in the file `manifest.txt'.
+%% 
+%% Template article for cas-dc documentclass for 
+%% double column output.
+\PassOptionsToPackage{numbers,compress}{natbib}
+\documentclass[a4paper,fleqn]{cas-dc}
+
+% If the frontmatter runs over more than one page
+% use the longmktitle option.
+
+%\documentclass[a4paper,fleqn,longmktitle]{cas-dc}
+
+\usepackage[numbers,compress]{natbib}
+%\usepackage[authoryear]{natbib}
+%\usepackage[authoryear,longnamesfirst]{natbib}
+
+\usepackage{orcidlink}
+
+\usepackage{lineno}
+\linenumbers
+
+%%%Author macros
+\def\tsc#1{\csdef{#1}{\textsc{\lowercase{#1}}\xspace}}
+\tsc{WGM}
+\tsc{QE}
+%%%
+
+% Uncomment and use as if needed
+%\newtheorem{theorem}{Theorem}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newdefinition{rmk}{Remark}
+%\newproof{pf}{Proof}
+%\newproof{pot}{Proof of Theorem \ref{thm}}
+
+\begin{document}
+\let\WriteBookmarks\relax
+\let\printorcid\relax
+\def\floatpagepagefraction{1}
+\def\textpagefraction{.001}
+
+\shorttitle{pGRAMS instrumental paper}
+\shortauthors{J. Zeng et~al.}
+
+% Main title of the paper
+\title [mode = title]{A Stratospheric Liquid Argon Time Projection Chamber: The prototype Gamma-Ray and AntiMatter Survey (pGRAMS) Balloon Payload}  
+
+% Title footnote mark
+% eg: \tnotemark[1]
+%\tnotemark[1] 
+
+% Title footnote 1.
+% eg: \tnotetext[1]{Title footnote text}
+%\tnotetext[1]{} 
+
+
+%%%%%%%% Affiliation %%%%%%%%
+\affiliation[1]{organization={State Key Laboratory of Dark Matter Physics, Key Laboratory for Particle Astrophysics and Cosmology (MoE), Shanghai Key Laboratory for Particle Physics and Cosmology, Tsung-Dao Lee Institute, Shanghai Jiao Tong University},
+                %addressline={No. 1 Lisuo Road},
+                %city={Pudong New Area},
+%               citysep={}, % Uncomment if no comma needed between city and postcode
+                postcode={201210},
+                state={Shanghai},
+                country={China}}
+
+
+
+\affiliation[2]{organization={Department of Physics, Northeastern University},
+                addressline={360 Huntington Ave},
+                city={Boston},
+%               citysep={}, % Uncomment if no comma needed between city and postcode
+                postcode={02151},
+                state={MA},
+                country={USA}}
+
+%\affiliation[3]{State Key Laboratory of Dark Matter Physics, Key Laboratory for Particle Astrophysics and Cosmology (MoE), Shanghai Key Laboratory for Particle
+%Physics and Cosmology, School of Physics and Astronomy, Shanghai Jiao Tong University,
+                %addressline={No. 1 Lisuo Road},
+                %city={Pudong New Area},
+%               citysep={}, % Uncomment if no comma needed between city and postcode
+%                postcode={200240},
+%                state={Shanghai},
+%                country={China}}
+
+
+\affiliation[3]{organization={Department of Physics, Waseda University},
+                addressline={3-4-1 Okubo, Shinjuku-ku},
+                city={Tokyo},
+                postcode={169-8555},
+                state={NAN},
+                country={Japan}}
+
+\affiliation[4]{organization={Japan Aerospace Exploration Agency (JAXA)},
+                addressline={3-1-1 Yoshinodai, Chuo-ku},
+                city={Sagamihara City},
+                postcode={252-5210},
+                state={Kanagawa},
+                country={Japan}}
+
+\affiliation[5]{organization={Department of Physics, University of Tokyo},
+                addressline={NAN},
+                city={Tokyo},
+                postcode={113-0033},
+                state={NAN},
+                country={Japan}}
+
+
+\affiliation[6]{organization={Department of Physics, University of Texas Arlington},
+                addressline={701 South Nedderman Drive},
+                city={Arlington},
+                postcode={76019},
+                state={TX},
+                country={USA}}
+
+\affiliation[7]{organization={NASA Goddard Space Flight Center},
+                addressline={8800 Greenbelt Road},
+                city={Greenbelt},
+                postcode={20771},
+                state={MD},
+                country={USA}}
+
+\affiliation[8]{organization={Department of Astronomy, Yale University},
+                addressline={P.O. Box 208101},
+                city={New Haven},
+                postcode={06520-8101},
+                state={CT},
+                country={USA}}
+
+\affiliation[9]{organization={Department of Physics, Washington University at St. Louis},
+                addressline={One Brookings Drive},
+                city={St. Louis},
+                postcode={63130-4899},
+                state={MO},
+                country={USA}}
+
+\affiliation[10]{organization={Oak Ridge National Laboratory},
+                addressline={5200, 1 Bethel Valley Rd},
+                city={Oak Ridge},
+                postcode={37830},
+                state={TN},
+                country={USA}}
+
+\affiliation[11]{organization={Department of Earth and Space Science, Graduate School of Science, Osaka University},
+                addressline={1-1 Machikaneyama-cho},
+                city={Toyonaka},
+                postcode={560-0043},
+                state={Osaka},
+                country={Japan}}
+
+\affiliation[12]{organization={Department of Physics, Graduate School of Advanced Science and Engineering, Hiroshima University},
+                addressline={1-3-2, Kagamiyama},
+                city={Higashi Hiroshima-shi},
+                postcode={739-0046},
+                state={Hiroshima},
+                country={Japan}}
+
+\affiliation[13]{organization={Department of Physics, Faculty of Engineering Science, Yokohama National University},
+                addressline={NAN},
+                city={Yokohama},
+                postcode={240-8501},
+                state={NAN},
+                country={Japan}}
+
+\affiliation[14]{organization={RIKEN Nishina Center},
+                addressline={Hirosawa 2-1},
+                city={Wako-shi},
+                postcode={351-0198},
+                state={Saitama},
+                country={Japan}}
+
+\affiliation[15]{organization={Interdisciplinary Theoretical \& Mathematical Science Program (iTHEMS), RIKEN},
+                addressline={2-1 Hirosawa},
+                city={NAN},
+                postcode={351-0198},
+                state={NAN},
+                country={Japan}}
+
+\affiliation[16]{organization={Kavli Institute for the Physics and Mathematics of the Universe (WPI), UTIAS, The University of Tokyo},
+                addressline={5-1-5 Kashiwanoha},
+                city={Kashiwa},
+                postcode={277-8583},
+                state={Chiba},
+                country={Japan}}
+
+\affiliation[17]{organization={Department of Physics, Columbia University},
+                addressline={NAN},
+                city={New York},
+                postcode={10027},
+                state={NY},
+                country={USA}}
+
+\affiliation[18]{organization={Key Laboratory of Particle Astrophyics, Institute of High Energy Physics, Chinese Academy of Sciences},
+                addressline={NAN},
+                city={Beijing},
+                postcode={100049},
+                state={NAN},
+                country={China}}
+
+\affiliation[19]{organization={Tianfu Cosmic Ray Research Center},
+                addressline={NAN},
+                city={Chengdu},
+                postcode={610000},
+                state={Sichuan},
+                country={China}}
+
+\affiliation[20]{organization={Department of Physics and Astronomy, Barnard College},
+                addressline={3009 Broadway},
+                city={New York},
+                postcode={10027},
+                state={NY},
+                country={USA}}
+
+\affiliation[21]{organization={Enrico Fermi Institute, The University of Chicago},
+                addressline={5640 South Ellis Ave},
+                city={Chicago},
+                postcode={60637},
+                state={IL},
+                country={USA}}
+
+\affiliation[22]{organization={Department of Physics, Nagoya University},
+                addressline={Furo-cho, Chikusa-ku},
+                city={Nagoya},
+                postcode={464-8601},
+                state={Aichi},
+                country={Japan}}
+
+\affiliation[23]{organization={Faculty of Science, Kanagawa University},
+                addressline={3-27-1, Rokkakubashi, Kanagawa-ku},
+                city={Yokohama-shi},
+                postcode={221-0802},
+                state={Kanagawa},
+                country={Japan}}
+
+\affiliation[24]{organization={Department of Mechanical Engineering, Howard University},
+                addressline={2400 6th St NW},
+                city={Washington},
+                postcode={20059},
+                state={DC},
+                country={USA}}
+
+\affiliation[25]{organization={University of California Berkeley Space Sciences Laboratory},
+                addressline={University Avenue and Oxford St},
+                city={Berkeley},
+                postcode={94720},
+                state={CA},
+                country={USA}}
+
+\affiliation[26]{organization={Department of Physics, Faculty of Science and Technology, Tokyo University of Science},
+                addressline={2641 Yamazaki},
+                city={Noda},
+                postcode={278-8510},
+                state={Chiba},
+                country={Japan}}
+
+\affiliation[27]{organization={Department of Medical Education, National Defense Medical College},
+                addressline={3-2 Namiki},
+                city={Tokorozawa},
+                postcode={359-8513},
+                state={Saitama},
+                country={Japan}}
+
+\affiliation[28]{organization={Julius-Maximilians-Universit\"{a}t W\"{u}rzburg, Fakult\"{a}t f\"{u}r Physik und Astronomie, Institut f\"{u}r Theoretische Physik und Astrophysik, Lehrstuhl f\"{u}r Astronomie},
+                addressline={Emil-Fischer-Str. 31 / Sanderring 2},
+                city={W\"{u}rzburg},
+                postcode={97074 / 97070},
+                state={NAN},
+                country={Germany}}
+
+
+
+%%%%%%%% Author List %%%%%%%%
+
+% First author
+\author[1,2]{J. Zeng\,\orcidlink{0000-0002-4157-1964}}[type=editor,
+      auid=000,
+      bioid=1,
+      %prefix=Sir,
+      orcid=0000-0002-4157-1964,
+      %facebook=<facebook id>,
+      %twitter=<twitter id>,
+      %linkedin=<linkedin id>,
+      %gplus=<gplus id>
+      ]
+% Footnote of the first author
+%\fnmark[1]
+% Email id of the first author
+%\ead{jczeng@sjtu.edu.cn}
+% URL of the first author
+%\ead[url]{}
+
+\author[2]{J. LeyVa\,\orcidlink{0009-0007-9478-5185}}[type=editor,
+    auid=000,
+    bioid=1,
+    %prefix=Sir,
+    %role=Researcher,
+    orcid=0009-0007-9478-5185
+    ]
+% Footnote of the second author
+%\fnmark[2]
+% Email id of the second author
+%\ead{j.leyva@northeastern.edu}
+% URL of the second author
+%\ead[url]{}
+
+
+%%%%%%%% rest of the authors in alphabatical order %%%%%%%%
+\author[2]{A. Ames\,\orcidlink{0000-0002-8249-714X}}[type=editor,
+    auid=000,bioid=1,
+    %prefix=Sir,
+    %role=Researcher,
+    orcid=0000-0002-8249-714X
+    ]
+
+\author[3,4]{K. Aoyama}
+\author[5]{S. Arai}
+\author[3]{S. Arai}
+\author[2]{T. Aramaki}
+\author[6]{J. Asaadi}
+\author[5]{A. Bamba}
+
+\author[2]{A. Barnett\,\orcidlink{0009-0005-4962-7597}}[type=editor,
+    auid=000,bioid=1,
+    %prefix=Sir,
+    %role=Researcher,
+    orcid=0009-0005-4962-7597
+    ]
+    
+\author[7]{N. Cannady}
+\author[8]{P. Coppi}
+\author[7]{G. De Nolfo}
+
+\author[2]{C. Earley\,\orcidlink{0009-0003-2969-9038}}[type=editor,
+    auid=000,bioid=1,
+    %prefix=Sir,
+    %role=Researcher,
+    orcid=0009-0003-2969-9038
+    ]
+    
+\author[9]{M. Errando}
+\author[10]{L. Fabris}
+\author[11]{T. Fujiwara}
+\author[12]{Y. Fukazawa}
+\author[7]{P. Ghosh}
+\author[5]{K. Hagino}
+\author[11]{T. Hakamata}
+\author[13]{N. Hiroshima}
+\author[5]{M. Ichihashi}
+\author[14]{Y. Ichinohe}
+\author[11,15,16]{Y. Inoue}
+\author[3]{K. Ishikawa}
+\author[11]{K. Ishiwata}
+\author[5]{T. Iwata}
+\author[17]{G. Karagiorgi}
+\author[5]{T. Kato}
+\author[11]{H. Kawamura}
+\author[18,19]{D. Khangulyan}
+\author[7]{J. Krizmanic}
+\author[17]{Y. Liu}
+\author[17]{A. Malige}
+\author[7]{J.G. Mitchell}
+\author[7]{J.W. Mitchell}
+\author[20]{R. Mukherjee}
+\author[3]{R. Nakajima}
+\author[22]{K. Nakazawa}
+\author[11]{H. Odaka}
+\author[22]{K. Okuma}
+\author[17]{K. Perez}
+\author[2]{N. Poudyal}
+\author[17]{I. Safa}
+\author[21]{K. Sakai}
+\author[7]{M. Sasaki}
+\author[17]{W. Seligman}
+\author[17]{J. Sensenig}
+\author[11]{K. Shirahama}
+\author[23]{T. Shiraishi}
+\author[24]{S. Smith}
+\author[12]{Y. Suda}
+\author[2]{A. Suraj\,\orcidlink{0009-0009-5985-360X}}[type=editor,
+    auid=000,bioid=1,
+    %prefix=Sir,
+    %role=Researcher,
+    orcid=0009-0009-5985-360X
+    ]
+\author[12]{H. Takahashi}
+\author[5]{S. Takashima}
+\author[5,4]{T. Tamba}
+\author[3]{M. Tanaka}
+\author[17]{S. Tandon}
+\author[11]{R. Tatsumi}
+\author[25]{J. Tomsick}
+\author[23]{N. Tsuji}
+\author[26]{Y. Uchida}
+\author[3]{Y. Utsumi}
+\author[24]{S. Watanabe}
+\author[3]{Y. Yano}
+\author[27]{K. Yawata}
+\author[28]{H. Yoneda}
+\author[3]{K. Yorita}
+\author[11]{M. Yoshimoto}
+
+    
+%%%%%%%% corresponding author %%%%%%%%
+\author[2]{T. Aramaki\,\orcidlink{0000-0002-5104-4682}}[type=editor,
+    %style=chinese,
+    auid=000,
+    bioid=1,
+    %prefix=Sir,
+    orcid=0000-0002-5104-4682,
+    %facebook=<facebook id>,
+    %twitter=<twitter id>,
+    %linkedin=<linkedin id>,
+    %gplus=<gplus id>
+    ]
+%\credit{Conceptualization of this study, Methodology, Software, hardware integration}
+% Corresponding author indication
+\cormark[1]
+% Corresponding author footnote.
+\tnotetext[1]{corresponding author}
+% Email id of the corresponding author
+\ead{t.aramaki@northeastern.edu}
+
+% Footnote text
+%\fntext[1]{}
+
+% For a title note without a number/mark
+%\nonumnote{}
+
+% Here goes the abstract
+\begin{abstract}
+The Gamma-Ray and AntiMatter Survey (GRAMS) is a next-generation long-duration ballooning (LDB) experiment using a Liquid Argon Time Projection Chamber (LArTPC) detector to measure MeV gamma rays and antiparticles. MeV gamma-ray observations are important for understanding multi-messenger and time-domain astronomy, enabling exploration of the universe's most potent events, such as supernovae and neutron star mergers. Building on the scientific significance of MeV gamma rays, GRAMS will explore the 'MeV gap', improving measurement sensitivity that has historically been limited by challenges in reconstructing Compton scatter events. In addition, the GRAMS detection concept doubles as an antiparticle spectrometer, targeting low-energy cosmic antinuclei. To validate this dual-detection concept, preparations are advancing toward a spring 2027 balloon flight of a small-scale LArTPC, the prototype GRAMS (pGRAMS) mission. These ongoing efforts establish the core design, functionality, and performance baseline for the pGRAMS instrument.
+\end{abstract}
+
+% Use if graphical abstract is present
+%\begin{graphicalabstract}
+%\includegraphics{}
+%\end{graphicalabstract}
+
+% Research highlights
+%\begin{highlights}
+%\item 
+%\item 
+%\item 
+%\end{highlights}
+
+
+%\nocite{*}
+
+% Keywords
+% Each keyword is seperated by \sep
+\begin{keywords}
+LArTPC \sep MeV gamma-ray \sep Dark Matter \sep GRAMS \sep antinucleus \sep Scintillation detectors \sep Balloon instrumentation 
+\end{keywords}
+
+\maketitle
+
+% Main text
+\section{Introduction}\label{chap:Introduction}
+MeV gamma ray astronomy occupies a scientifically rich yet observationally challenging frontier in modern astrophysics, bridging the gap between soft X-Ray and high-energy GeV observations. Photons in the MeV energy range (approximately 0.1–100 MeV) serve as unique messengers for studying some of the most extreme physical processes in the universe, providing a direct observational probe of cosmic environments. This energy band is unique because it is the primary domain of nuclear transitions and antimatter annihilation. While lower-energy X-rays trace thermal processes and high-energy GeV/TeV gamma rays trace non-thermal emission mechanisms, MeV gamma rays directly encode the universe's fundamental nuclear physics. Due to dominance of Compton scattering, the MeV gap has been long under explored since the Imagine Compton Telescope (COMPTEL) experiment launched in 1991 as one of the four main instruments on NASA's Compton Gamma-Ray Observatory (CGRO) \cite{refId0, refId1, much1995comptel}. The current observation sensitivity of MeV band photons is significantly lower than that in X-Rays and high-energy GeV gamma-rays, resulting in the famous "MeV Gap" problem \cite{aramaki2020dual}.
+
+
+Thus, multiple experiments optimized for MeV region were formed. Next-generation satellite experiments specifically targeting MeV gamma-rays include COSI (Compton Spectrometer and Imager) \cite{Tomsick2023Compton}, selected by NASA as a Small Explorer mission scheduled for launch in 2025, which will survey the sky between 0.2–5 MeV with a wide field of view, optimized for detecting spectral lines from positron annihilation and radioactive isotopes. Other proposed missions include e-ASTROGAM (0.3–3 MeV) \cite{DEANGELIS20181}, AMEGO/AMEGO-X (0.2–10000 MeV), and balloon-borne experiments such as GRAMS (Gamma-Ray and AntiMatter Survey) \cite{10.1117/12.2562352}. There are also many future MeV missions targeting on satellite  \cite{sun2026developmentnovelcomptoncamera, shutt2025gammatpcgammaraytelescopeconcept}, giving a bright hope of exploring MeV region thoroughly in the next decade.
+
+At the same time, cosmic-ray based rare antinucleus event searches have become increasingly important since the beginning of the century, see Figure~\ref{fig:cosmic_flux}. Cosmic antiprotons have been measured from the AMS and BESS experiments, which leave open questions about the origin and the mechanism of its flux \cite{PhysRevLett.117.091103, YAMAMOTO2013227, sakai2021new}. The antiproton is the largest component of all cosmic antinuclei, which could be generated by energetic cosmic protons interacting with Interstellar Medium \cite{Moskalenko_2002, kiraly1981antiprotons}. While a lot of studies conducted have revealed the potential of indirectly detecting dark matter using sub-GeV antideuteron and antihelium-3 \cite{PhysRevD.102.063004, Doetinchem_2020, PhysRevD.62.043003, Baer_2005, PhysRevD.78.043506, PhysRevD.71.083013, Alejandro_Ibarra_2013,PhysRevD.88.023014, N.Fornengo_2013, PhysRevD.89.103504, PhysRevD.97.103011, Tomassetti:2017DQ, lin2018expectationscosmicantideuteronflux, Ding_2019, 10.1007/jhep082014009, PhysRevD.89.076005, PhysRevD.96.083020, ZENG2025103152}. The GAPS experiment which orientated toward low energy cosmic antinucleus detection had a successful Antarctic balloon flight in the beginning of 2026.
+
+\begin{figure*}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/cosmic_ray_low_energy.png}\\
+    \caption[Flux of some cosmic-ray inside GeV energy range]{Flux of some cosmic-ray inside GeV energy range. Left plot shows fluxes of experiment or model prediction \cite{PhysRevLett.117.091103, Jin_2015, Abe_2016, PhysRevLett.108.051102, PhysRevLett.132.131001, PhysRevLett.118.191101, donato2008antideuteron} while right plot added some experiments' sensitivity towards each individual cosmic-ray species. \cite{ZENG2025103152, PhysRevLett.132.131001, zeng2026development, Kounine:2011bkq, SAFFOLD2021102580, ARAMAKI20166}}
+    \label{fig:cosmic_flux}
+\end{figure*}
+
+The Gamma-Ray and AntiMatter Survey (GRAMS) is a novel project that simultaneously targets astrophysical observations with MeV gamma rays and an indirect dark matter search via antimatter detection \cite{aramaki2020dual, zeng2025gammarayantimattersurveygramsexperiment, 10.22323/1.395.0552}. The GRAMS instrument is designed around a cost-effective, large-scale LArTPC (Liquid Argon Time Projection Chamber) detector surrounded by plastic scintillators; using drifted electrons and a scintillation light trigger, the LArTPC reconstructs the primary vertex and performs charged-particle detection. GRAMS was initially proposed in 2019, followed by continuous technology development. The project was funded for an engineering balloon flight in Japan in 2022 and completed a successful flight in 2023 \cite{Nakajima:2024fgx}. In 2025, a $30\,\mathrm{cm} \times 30\,\mathrm{cm} \times 20\,\mathrm{cm}$ detector was assembled and tested in Japan, performing a $700\,\mathrm{MeV}/c$ antiproton beam test at the J-PARC T98 experiment \cite{Yano:202503}. A smaller-scale $5.12\,\mathrm{cm} \times 5.12\,\mathrm{cm} \times 10\,\mathrm{cm}$ detector was also built and tested in Japan, successfully verifying the Compton-event detection capability \cite{TAKASHIMA2026171858}. GRAMS was funded by NASA APRA in 2023 for a prototype balloon flight, pGRAMS. A $30\,\mathrm{cm} \times 30\,\mathrm{cm} \times 10\,\mathrm{cm}$ pGRAMS detector, so-called miniGRAMS is currently being developed to verify the detection concept and performance at the 35\,km balloon flight altitude. This work presents the design and performance evaluation of the pGRAMS instrument.
+
+\section{pGRAMS Design Principle}\label{chap:design}
+There are several hard requirements to start:
+\begin{itemize}
+    \item Demonstrate both MeV gamma-ray and cosmic-ray charged-particle detection capability.
+    \item Stable operation at stratospheric altitude, with demonstrated flight safety in coordination with the flight provider, WorldView Enterprise.
+    \item NASA's Goddard Space Flight Center (GSFC) and the Columbia Scientific Balloon Facility (CSBF) have outlined structural design requirements for balloon flight gondolas in the Structural Design Requirements document (820-PG-8700.0.1A) \cite{csbf_gondola_docs}.
+    \item Weight limit of 600\,kg.
+\end{itemize}
+Based on these requirements, a detector system with the geometry of $30\,\mathrm{cm} \times 30\,\mathrm{cm} \times 10\,\mathrm{cm}$, the miniGRAMS detector, was designed and fabricated. To detect Compton events, miniGRAMS is divided into a $3\times3$ array of 9 cells, separated by PCBs. The unit cell is a modularized design sharing the same dimensions as the previous engineering flight, making future detector expansion straightforward. Detailed detector design is described in section~\ref{chap:detector}. The engineering flight (eGRAMS mission) has successfully demonstrated stable operation of the unit-cell LArTPC at stratospheric altitude. pGRAMS adopts a similar design to meet the balloon flight safety requirements. Per the flight provider's requirements, the total science payload weight will not exceed 600\,kg, since exceeding this significantly affects balloon flight operation safety as well as the float altitude. We have addressed the mass budget and assigned it to the different subsystems accordingly; see Table~\ref{tab:pGRAMS_massbudget}.
+
+% TODO:Correct these numbers based on measurement
+\begin{table}[width=.9\linewidth,cols=3,pos=h]
+\caption{pGRAMS mass budget}\label{tab:pGRAMS_massbudget}
+\begin{tabular*}{\tblwidth}{@{} LRR@{} }
+\toprule
+\textbf{Component} & \textbf{Mass (kg)} & \textbf{Contingency (kg)} \\
+\midrule
+cryostat + argon & 185 & 0 \\
+TPC + inside harness & 12.237 & 0 \\
+Hub computer box & 9.15 & 0 \\
+Sealed enclosure & 53.770 & 5.4 \\
+Gondola & 208.4 & 10 \\
+TOF + MPD & 21.03 & 2.1 \\
+Batteries & 43 & 4.3 \\
+PDU & 44.035 & 4.4 \\
+\midrule
+\textbf{Total} & \textbf{576.622} & \textbf{26.2} \\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+\section{System-Level Design}\label{chap:system}
+Mechanically, the pGRAMS payload can be described by the gondola model shown in Figure\ref{fig:pGRAMS_gondola}. The ``bell-jar'' design cryostat hosts the primary detector, the miniGRAMS LArTPC, at the center of the payload. The MPD detector vertically covers the cryostat on four faces, and two layers of TOF detectors sit on top of the MPD tower. The TOF, MPD tower, and cryostat together sit on top of an aluminum honeycomb base plate. On the outer perimeter of the base plate, the four faces of the outer gondola each host a different subsystem: the hub box, which hosts all items related to communication and control of the system; the sealed enclosure, which hosts all electronics that cannot tolerate the near-vacuum conditions at stratospheric altitude; the power distribution unit (PDU) stack, which hosts all boards that power the science payload; and the flight provider's avionics box, which occupies the fourth face. All four faces of the outer gondola are protected by side crash pads, while the bottom of the payload is protected by a landing crash pad.
+
+In terms of subsystem development and functionality, the pGRAMS payload can be divided into six major parts. The core of the payload consists of the LArTPC, TOF, and MPD detectors. The LArTPC detector is discussed in section~\ref{chap:detector}, while the TOF and MPD detectors are discussed in section~\ref{chap:TOF_MPD}. The data acquisition system is covered in section~\ref{chap:DAQ}. The power system is covered in section~\ref{chap:engineer:PDU}. The flight control and telemetry systems are covered in section~\ref{chap:engineer:control}. The flight provider, WorldView Enterprise, supplies its own avionics box and power to handle ground commanding, data downlink, balloon control, termination, and recording. This paper does not cover the flight provider's system design.
+\begin{figure*}
+    \centering
+    \includegraphics[width=0.9\linewidth]{fig/pGRAMS_system_diagram.png}
+    \caption[pGRAMS experiment system diagram]{pGRAMS experiment system diagram.}
+    \label{fig:system_diagram}
+\end{figure*}
+
+\section{Engineering Design}\label{Engineer}
+Following the requirement mentioned in Section.\ref{chap:design}, a customized $71\,\mathrm{in} \times 71\,\mathrm{in} \times 86.5\,\mathrm{in}$ gondola was designed and assembled. Figure~\ref{fig:pGRAMS_gondola} shows the CAD (Computer-Aided Design) model of the pGRAMS science payload.
+
+\begin{figure*}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/pGRAMS_gondola.png}
+    \caption[pGRAMS gondola design demonstration]{pGRAMS gondola design demonstration. These two figures show the pGRAMS gondola design demonstration from two different corner views. The center tower covers the cryostat, holds MPD and TOF systems, forming the main structure of the detector. Top TOF and Middle TOF are placed on top of the tower to provide the timing information. The four sides of the tower are used to hold the MPD panels. Four of the outer gondola faces are used to hold the Hub box, Sealed Enclosure, PDU and Flight provider avionics, respectively. There are also side crash pads installed to provide protection during landing. The flight provider also has an antenna bar mounted on top of the outer frame. Four legs are installed with casters at the bottom of the base plate to enable flexibility of the payload during integration, while they are removed and replaced with the landing system prior to launch.}
+    \label{fig:pGRAMS_gondola}
+\end{figure*}
+
+\subsection{Gondola Frame Design}
+\label{chap:engineer:gondola}
+Motivated by mechanical rigidity and weight requirements, 6061-T6 aluminum was selected as the primary material for the structure. To further reduce weight, aluminum honeycomb was chosen for the gondola base plate. The inner tower, which hosts all TOF and MPD detectors, covers the cryostat. The detector tower is not part of the load-bearing gondola structure. A series of 3/16-inch rivets is used to mate tower frames, minimizing weight compared to bolts and nuts. The outer gondola, by contrast, serves as the primary mechanical structure, transferring the load of the science payload to the flight provider's balloon. Each of the outer gondola faces is constructed from vertical aluminum square-tube posts at the corners, two 60-degree-angled square-tube cross beams, and one horizontal square-tube cross beam, providing overall stability to the frame. Each vertical post incorporates CNC-fabricated aluminum block inserts to improve structural strength, while the connections to the angled and horizontal cross beams are secured using gusset plates and 3/8" rivets. All four faces host, respectively, the Hub computer box, the sealed enclosure, the PDU stack, and the flight provider's avionics, each with a slightly different mounting scheme.
+
+\subsection{Cryostat Design}\label{chap:engineer:cryostat}
+The cryostat sits at the center of the gondola base plate. A big change compared to typical LArTPC direct-dark-matter-search experiments in the past\cite{abi2020deepundergroundneutrinoexperiment} is that the design minimizes the blocking of the incoming events. To achieve this, we use the ``bell-jar'' design with all the heavy flanges located at the bottom so dense materials have minimal effect on blocking the incoming gamma rays. 
+
+The final design is showed in Figure~\ref{fig:pGRAMS_cryostat}. Figure~\ref{fig:pGRAMS_cryostat}\textbf{(a)} shows the general cryostat view. The miniGRAMS TPC is mounted inside the inner cryostat. There are Kapton heaters installed outside the inner cryostat to help release the argon before descending. Figure~\ref{fig:pGRAMS_cryostat}\textbf{(b)} shows the actual pGRAMS cryostat on the base plate with the vacuum jacket lifted up. Figure~\ref{fig:pGRAMS_cryostat}\textbf{(c)} shows the bottom of the cryostat. The center KF cross is used for plumbing, while each quadrant has a signal flange for charge and light readout, HK sensors, a detector power flange, and a high-voltage flange. Figure~\ref{fig:pGRAMS_cryostat}\textbf{(d)} shows the area between the inner cryostat and the outer vacuum jacket. The green cylinders are G10 supporting rods for the purpose of low thermal conductance. The thin blue, red, and yellow hoses are plumbing lines for fill, vent, and LLD, respectively. The middle-sized yellow line shows the safety rupture disk.
+
+We also carried out a series of analyses, including thermal and structural analyses, to ensure that the cryostat and plumbing system could survive the balloon-flight environment. The thermal analysis shows that, with the multi-layer insulation and vacuum-jacket design, the heat load to the inner cryostat can be reduced to less than 30 W. The structural analysis shows that both the inner and outer cryostats can withstand the 8g acceleration during parachute deployment.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/pGRAMS_cryostat.png}
+    \caption[pGRAMS cryostat design demonstration]{pGRAMS cryostat design demonstration. \textbf{(a)} The left top figure shows the general CAD model cryostat view. \textbf{(b)} The top right figure shows the actual pGRAMS cryostat on the base plate with vacuum jacket lifted up. \textbf{(c)} The lower left figure shows the bottom of the vacuum jacket flange. \textbf{(d)} The lower right figure shows the area between the inner cryostat and the outer vacuum jacket.}
+    \label{fig:pGRAMS_cryostat}
+\end{figure}
+
+\subsection{Payload Power Design}\label{chap:engineer:PDU}
+The power distribution unit (PDU) is responsible for distributing power from the battery packs to the various subsystems of the pGRAMS payload, including the flight computer system, data acquisition (DAQ) system, Time of Flight (TOF) system, cryostat heaters, and other electronics. The PDU is designed to handle the high power requirements of the payload while remaining sufficiently robust for operation under balloon-flight conditions. It provides device-level power control, while the Hub computer remains continuously powered because it serves as the control endpoint of the PDU. Figure~\ref{fig:pGRAMS_PDU} shows the pGRAMS PDU design schemetics. Inside the PDU there is a COMMs (communication) board in charge of all communication control and telemetry, a main DC-DC board in charge of adapting battery voltage to each PDU board required, and 12 individual PDU boards in charge of different functional outputs for the science payload.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/pGRAMS_PDU_scheme.png}
+    \caption[pGRAMS PDU schemetics]{pGRAMS PDU schemetics}
+    \label{fig:pGRAMS_PDU}
+\end{figure}
+
+As for the power source, we selected the SR182175 battery stack \cite{nasa_csbf_sr182175}, which has been widely used in balloon experiments. Each battery stack has a nominal voltage of 28 V (22 V - 30 V depending on the load) and a capacity of 50 Ah. With our entire science payload power estimation of 294.7615 W, we can predict the mission time based on the number of battery stacks. With a total nominal load of 293.8375 W and a PDU efficiency of 85\%, we can estimate the current and flight time for different numbers of battery stacks. Table~\ref{tab:pGRAMS_flight_time} shows the estimated flight times for different scenarios. According to the battery stack manual, it can perform as poorly as outputting 22 V under a non-ideal load, while each battery stack has a lower probability of failure at lower current. Based on the flight requirement of a minimum of 12 hours, we need at least 4 battery stacks to meet the requirement. With 4 battery stacks, we could have around 16 hours of flight time under nominal load and around 13 hours of flight time under worst-case load. With more battery stacks, we could have more margin for the flight time, but this would also add more weight to the payload, which would affect the flight altitude and also create mechanical stress on the gondola. A balance between flight duration and total mass must therefore be achieved to ensure a successful flight.
+
+\begin{table}[width=\linewidth,cols=5,pos=h]
+\small
+\caption{Battery performance breakdown for nominal vs. worst-case load scenarios.}
+\label{tab:pGRAMS_flight_time}
+\begin{tabular*}{\tblwidth}{@{} LLLL@{} }
+\toprule
+\multicolumn{4}{@{}l@{}}{\textbf{Nominal Load, 28V battery output voltage}} \\
+\midrule
+\textbf{No. Batt.} & \textbf{Cap. [Ah]} & \textbf{Curr./Batt. [A]} & \textbf{Flight Time [h]} \\
+\midrule
+4 & 200 & 3.060 & 16.339 \\
+5 & 250 & 2.448 & 20.423 \\
+6 & 300 & 2.040 & 24.508 \\
+7 & 350 & 1.749 & 28.593 \\
+8 & 400 & 1.530 & 32.677 \\
+\midrule
+\multicolumn{4}{@{}l@{}}{\textbf{Worst Load, 22V battery output voltage}} \\
+\midrule
+\textbf{No. Batt.} & \textbf{Cap. [Ah]} & \textbf{Curr./Batt. [A]} & \textbf{Flight Time [h]} \\
+\midrule
+4 & 200  & 3.895 & 12.837 \\
+5 & 250  & 3.116 & 16.047 \\
+6 & 300  & 2.597 & 19.256 \\
+7 & 350  & 2.226 & 22.466 \\
+8 & 400  & 1.947 & 25.675 \\
+\bottomrule
+\end{tabular*}
+\smallskip
+\noindent\footnotesize The top block shows flight-time estimates for nominal battery performance (rated 28~V under load); the bottom block shows worst-case performance (22~V under load). With a 5~A current limit per battery stack, all cases remain within limit.
+\end{table}
+
+
+\subsection{Payload Control and Telemetry Design}\label{chap:engineer:control}
+As Figure~\ref{fig:pGRAMS_control} shows, the external payload control line would be through the pGRAMS Ground Computer all the way to the pGRAMS Hub computer which stays inside the Hub computer box on the gondola. We communicate with the payload at altitude through the flight provider’s cloud-based Stratollite Communication Service (SCS). The SCS is a collection of microservices, including an MQTT Broker (“Cloud Broker”) that manages communications with Stratollites. We send commands from the pGRAMS Ground Computer to the Cloud Broker, which in turn transmits the command to the flight provider’s Control Avionics. The Flight Control Avionics will process the command and provide the appropriate command message or signal to the GRAMS Hub computer through an ethernet RJ45 connection and a series of discrete commands. 
+During this pipeline, a digital command is established from the Ground computer and transferred to SCS on Flight provider's system. The flight provider will utilize MQTT to transfer this digital command to onboard avionics through Iridium/Starlink, both of which serve as backups to each other. After receiving this command in the form of an MQTT post from Iridium/Starlink, the flight provider's onboard avionics will broadcast this post, letting the pGRAMS Hub Computer receive this command and take actions within the pGRAMS payload.
+On the other hand, a series of discrete commands are established to control critical items such as Hub computer power and argon relief heaters. With discrete commands implemented, we will still retain control of our system's crucial parts under a computer malfunction during flight. The discrete commands are initialized from the Ground Computer while the intermediate signal lines are implemented by the flight provider. On the payload side, a distribution PCB will connect each analog discrete command to critical subsystems.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/pGRAMS_tele_control.png}
+    \caption[pGRAMS control]{pGRAMS command and telemetry pipeline}
+    \label{fig:pGRAMS_control}
+\end{figure}
+
+
+\section{LArTPC Detector}\label{chap:detector}
+The Liquid Argon Time Projection Chamber (LArTPC) is a powerful detection technology that has evolved significantly since its inception. The concept was first proposed by Nygren in 1974 as a method for precision tracking and calorimetry in particle physics experiments \cite{NYGREN201822}. Early implementations demonstrated the technology's ability to provide excellent spatial resolution and energy reconstruction capabilities through ionization charge collection in a liquid argon medium.
+
+Over the decades, LArTPC technology has matured through numerous experiments, including the pioneering work at Fermilab and subsequent large-scale implementations. The technology gained prominence with experiments such as MicroBooNE, which validated LArTPC performance for neutrino detection \cite{MicroBooNE:2007ivj}. More recently, the Deep Underground Neutrino Experiment (DUNE) has adopted LArTPC as its primary detection technology for next-generation physics research. The key advantages of LArTPC detectors include exceptional spatial resolution (sub-millimeter scale), excellent calorimetric capabilities for energy measurement, and the ability to reconstruct complex particle interaction topologies \cite{FALCONE2022167217}. These characteristics make LArTPC technology particularly suitable for both astrophysical gamma-ray observations and rare event searches, as demonstrated by the GRAMS mission.
+
+The LArTPC operates on the principle of ionization charge collection in liquid argon. When a charged-particle traverses the detector volume, it ionizes argon atoms along its path, creating electron-ion pairs. An applied electric field drifts the free electrons toward the anode (charge readout plane), while the ions drift toward the cathode. The charge collected at the anode is proportional to the energy deposited by the particle, enabling precise energy measurement and calorimetry.
+
+Scintillation light is produced during the ionization process and is detected by silicon photomultipliers (SiPMs) or PMT positioned at the cathode. This light signal provides the initial trigger and timing reference (T$_0$) for the event. The time difference between the scintillation light detection and the charge signal arrival determines the drift time, which directly translates to the vertical (Z) coordinate of the interaction via the known electron drift speed. Combined with the two-dimensional information from the charge readout grid, the full three-dimensional position of the event can be reconstructed with sub-millimeter precision.
+
+The pixel-grid or mesh-style structure of the charge readout allows determination of the horizontal (X and Y) coordinates by identifying which readout channels recorded a signal. This combination of spatial information from multiple detection mechanisms enables comprehensive event reconstruction and particle identification, making the LArTPC ideal for complex interaction topologies. pGRAMS detector design details are given in section~\ref{chap:detector:LArTPC:TPC}.
+
+\subsection{pGRAMS LArTPC Design}\label{chap:detector:LArTPC:TPC}
+We have constructed a $30\,\mathrm{cm} \times 30\,\mathrm{cm} \times 10\,\mathrm{cm}$ Liquid Argon Time Projection Chamber detector and named it miniGRAMS, in comparison to the proposed GRAMS science full-size detector ($140\,\mathrm{cm} \times 140\,\mathrm{cm} \times 20\,\mathrm{cm}$) and the lab-bench-verified, modularized microGRAMS detector ($10\,\mathrm{cm} \times 10\,\mathrm{cm} \times 10\,\mathrm{cm}$). Figure~\ref{fig:pGRAMS_TPC} shows the miniGRAMS detector sitting on the cryostat flange. miniGRAMS has its cathode on the bottom that is close to light readout setup and cryostat flange, while the top anode plane is connected to 12 different charge readout pre-amp banks. Detailed light readout and charge readout systems will be discussed in Section.\ref{chap:detector:LArTPC:light} and Section.\ref{chap:detector:LArTPC:charge}.
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/pGRAMS_TPC.png}
+    \caption[pGRAMS TPC]{Top picture shows the miniGRAMS LArTPC detector fully mounted inside the cryostats right before close the chamber. Bottom picture shows the detector inner view before mounting the top anode charge tile. Each of the cells are equipped with 16 SiPM (8 VIS SiPMs and 8 VUV SiPMs) }
+    \label{fig:pGRAMS_TPC}
+\end{figure}
+
+\subsection{Light System}\label{chap:detector:LArTPC:light}
+There is a TPC cathode PCB made with immersion gold surface finish technique. It has a cutout that exposes 16 SiPMs on the bottom center of each LArTPC cell, made up of a total of 144 SiPMs to capture the light signal inside the detector to provide the trigger for the entire detector. Each cell's 16 SiPMs are grouped into half VUV SiPMs and half VIS SiPMs. 3 carrier boards carry 48 SiPMs to provide bias and power, as well as amplification and readout.
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/pGRAMS_SiPM.jpeg}
+    \caption[pGRAMS SiPM]{Bottom side of the pGRAMS TPC. Three individual SiPM boards are mounted near each other.}
+    \label{fig:pGRAMS_SiPM}
+\end{figure}
+
+\subsection{Charge System}\label{chap:detector:LArTPC:charge}
+The anode is designed with a strip readout structure to provide two-dimensional position information for the ionization charge signals. The anode consists of 90 strips in both the X and Y directions, with each strip having a width of $2.8~mm$ and a separation of $200~\mu m$. This configuration allows for a total active area of $270~mm \times 270~mm$. Each strip is connected to a readout channel. Figure~\ref{fig:tilecloseup} shows design demonstrations of the pGRAMS tile, a series of X strips and orthogonal Y strips are constructed using an immersion gold surface finish technique to ensure separation and flatness. One of the strip group stays connected from front side small bridge while the other group are connected to each other through a PCB via and back plane wire. Each strip gives readout on both ends while only one end is being used, the other one is kept as a debug checkpoint. Deposited electron drift will diffuse into one pair or more X and Y strips, gives us capability of reconstructing X-Y position. This special 2D design has several advantages compared to conventional LArTPC's wire readout and it is used similarly in the nEXO experiment\cite{Li_2019}. It significantly reduces the number of channels for the same area and pixel size. For pGRAMS's charge tiles, the equivalent number of pixels would be $ 90\times90=8100$, but it will reduce to $90+90=180$. We can reduce power consumption and weight by almost two orders of magnitude both of which have a major effect on the balloon experiment. On the other hand, the strip design is much more stable when attached to a thick PCB, which helps prevent vibration effects that most underground experiments concerns less.
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/pGRAMS_tile.png}
+    \caption[pGRAMS tile design demonstration]{A. pGRAMS tile design demonstration. B. pGRAMS tile front-side detail. C. pGRAMS tile back-side detail. D. Tile photo under microscope.}
+    \label{fig:tilecloseup}
+\end{figure}
+
+A charge-sensitive preamplifier (CSP) converts charge collected from each tile strip and output it into a pulse with a characteristic amplitude. This amplitude directly corresponds to the energy deposited in the detector volume. The CSP for the LArTPC has been designed and constructed at Northeastern University and tested during the eGRAMS flight\cite{Nakajima:2024fgx}. A picture of a prototype version is shown in Figure~\ref{fig:preamppicture}. 
+
+This is a 2-layer printed circuit board with two different stages of amplification circuitry. The first amplification stage involves integrating the incoming charge signal to produce an exponential decay voltage waveform, and the second stage amplifies the voltage signal further to achieve a good signal-to-noise ratio. Pins 1 and 2 connect to the TPC tile or an injection board for bench testing. Pins 3, 4, 5, and 6 provide +5 V power, GND, signal out, and -5 V power, respectively. For the first amplification stage, a dual JFET connected in parallel is used to minimize the equivalent input noise charge. The $0.5~\text{pF}$ feedback capacitor and $1~\text{G}\Omega$ resistor are selected to provide an appropriate gain and decay time constant. The second stage uses a low-noise operational amplifier to further amplify the voltage signal. Critical components are selected based on their low-noise performance under cryogenic conditions. Full prototype CSP component selection and performance evaluation can be found in \cite{zeng2026development}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/CSP.png}
+    \caption[GRAMS CSP design and layout]{GRAMS CSP design and layout. \textbf{(a)} An initial version of the preamp board schematic. \textbf{(b)} A prototype of the CSP, version 5. Pins 1 and 2 connect to the TPC tile or an injection board for bench testing. Pins 3, 4, 5, and 6 provide +5 V power, GND, signal out, and -5 V power, respectively. \textbf{(c)} Designed PCB layout.}
+    \label{fig:preamppicture}
+\end{figure}
+
+To study, optimize, and calibrate the CSP, a bench test was established to quantify the injected charge and measure the output signal response. The setup involves a pulse generator that sends a square-wave signal to a voltage-divider circuit. The output of the voltage divider is connected to an injection capacitor of known capacitance: a $1~\text{pF}$ capacitor acts as an injection detector, while a $50~\text{pF}$ capacitor acts as a dummy detector. The value of the dummy-detector capacitance was varied to simulate the possible strip capacitance of the detector tile. At the output end, an analog shaper was used to shape the signal with different shaping times. Figure~\ref{fig:CSP_testbench} shows the bench setup and the resulting signal FWHM under different shaping times. Data were taken with different grounding configurations to identify the most stable operating condition for the CSPs. With the charge conversion
+\begin{align}\label{equ:Charge_calculation}
+    Q&=\varepsilon_{Ar}\times N_e\\
+    &=\varepsilon_{Ar}\times \frac{Q_{input}}{e}\\
+    &=\frac{\varepsilon_{Ar}}{e}\times C_{inject}V_{input}\\
+    &=\frac{25}{1.6\times10^{-19}}\times10^{-12}\times0.012~\text{V}\\
+    &=1.875\times10^6~\text{eV}=1.875~\text{MeV}
+\end{align}
+where $\varepsilon_{Ar}=25~\text{eV}$ and the electron charge is $e=1.6\times10^{-19}~\text{C}$. $C_{inject}$ is the injection-capacitor value, $1~\text{pF}$. $V_{input}$ is the input voltage from the pulse generator, $12~\text{mV}$, after the voltage divider. With this input-charge relation, the readout voltage signal can be converted to an input-charge energy value. The conversion relation is shown in Eq.\ref{equ:Charge_conversion}.
+\begin{equation}\label{equ:Charge_conversion}
+    1.875~\text{MeV}=7.5~\text{V}\Longrightarrow 1~\text{mV}=0.25~\text{keV}
+\end{equation}
+The CSP was successfully operated at liquid argon temperature and achieved performance corresponding to an energy resolution as low as 18.92 keV, based on the conversion from Eq.\ref{equ:Charge_conversion}. A detailed CSP technical report will be published separately.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/CSP_bench_test.png}
+    \caption[CSP bench test setup and result from different configurations]{CSP bench test setup and result from different configurations. The figure on the left shows the setup of the bench. Red line shows empty end noise evaluation, while 50pF are detector strips equivalent capacitance. Grey line shows the best performance, giving a best energy resolution at 18.92 keV}
+    \label{fig:CSP_testbench}
+\end{figure}
+
+% TODO: finish this section with more detailed information
+\subsection{Filtration System}\label{chap:detector:LArTPC:filter}
+Electron lifetime inside liquid argon could easily reach $ 200~\mu s$ with a well-controlled argon purity. Under our detector's drift e-field configuration, the design requires a minimum of $\sim80\ \mu s$ to capture the full drift event that deposits energies from the farthest position from the anode plane.
+
+
+% TODO: Request NEVIS team to re-write this section since the system has changed dramatically after TDR
+\section{Data Acquisition (DAQ)}\label{chap:DAQ}
+As shown in the pGRAMS system diagram in Figure~\ref{fig:system_diagram}, the DAQ system is responsible for reading out the charge signals from the LArTPC detector, digitizing them, and transmitting the data to the onboard computer for storage and analysis. The DAQ system is designed to handle the high data rates generated by the TPC while also being robust enough to operate under the harsh conditions of a balloon flight. After passing through the cryostat and vacuum-jacket flanges, the amplified charge signals from the CSPs are fed into a special shaper board designed by Columbia University to further sharpen the signal rise for improved timing resolution. The shaped charge signals are then sent to the Nevis DAQ crate, which is housed inside the sealed enclosure, where they are digitized and transmitted to the DAQ computer via PCIe. At the same time, the TPC light signals are sent to a shaper card in the same Nevis crate for further shaping and digitization. The light trigger is also digitized and sent to the DAQ computer via PCIe, and it provides a trigger signal to the MPD/TOF system for subsequent event merging.
+
+Mechanically, the DAQ crate comprises a 9U crate with a custom backplane, a crate controller, a clock card, a transmitter module, a trigger board, and three ADC+FEM (Front End Module) cards responsible for digitization and data processing. The crate is housed inside the sealed enclosure because of the environmental and thermal requirements. 
+
+\subsection{Charge Digitization}\label{chap:DAQ:charge}
+As for charge DAQ digitization and Data Handling, the analog TPC data are received by each ADC+FEM card in groups of 64 channels. The ADC part of the card was designed by Brookhaven National Lab, while the digital data handling part was designed by Columbia University, Nevis Labs. Within each card, the analog signals are digitized within eight AD9222 octal-channel, 12-bit ADC chips from Analog Devices, Inc., providing sufficient dynamic range to accommodate both gamma-ray and antiparticle detection, with a power consumption of 100~mW/channel. Signals are digitized at 16~MHz, but only one in eight samples are kept in the digital handling part of the board, reducing the sampling rate to effectively 2~MHz. The 2~MHz sampling rate is optimized by taking into consideration the expected pulse shape provided by the convolution of the front-end electronics, the expected electric field response, and the O(1)~$\mu$s diffusion effects which govern charge drift within the liquid argon. Digital handling is provided by the FEM part of the card, which houses a Stratix III Altera FPGA. Data from all 64 wires are first rearranged from channel order to time order, and duplicated into two readout streams---one that supports continuous readout after loss compression, and another that allows for lossless compression and readout upon receiving an external trigger. Only the latter option was chosen for pGRAMS. 
+The crate controller provides system configuration and slow I/O communication with each board in the readout crate. The system is run on an independent, 16~MHz clock, distributed synchronously to all electronics cards via the backplane. The clock resets upon a software-initiated run-start and is tracked in terms of a configurable (nominally set to 100~us) frame size and a 2~MHz sample number keeping track of time within the frame. All ADC+FEM cards are synchronized to this common 16~MHz clock. The trigger board is responsible for receiving and issuing trigger signals, as well as distributing accepted triggers to the crate controller. The crate controller subsequently propagates them to the transmitter module, which initiates sequential readout of each ADC+FEM card beginning with a configurable readout window prior to the trigger time, $\Delta t$, and extending forward in time spanning a total of 3$\Delta t$. The configurable size of $\Delta t$ is governed by the maximum drift time and spans three or four frames. To reduce the data volume, the FPGA trims the three or four frames to span the exact readout window required, 100~$\mu$s before the trigger plus 200~$\mu$s after the trigger. Optionally, lossless compression (Huffman) can be applied, and, after processing by the FPGA, the data passes to the crate backplane dataway. A token-passing scheme is utilized to transfer data from each FEM board to the data transmitter module in a controlled way, whereby each FEM, in the order of closest to farthest away from the XMIT module, receives a token, transmits its data to the XMIT, and passes the token on to the next FEM in the sequence. Each FEM sends all data associated with a particular trigger number. This data transfer is relayed via the otherwise passive crate backplane, and is limited to 512~MB/s. In the transmitter module, the data are buffered temporarily and sent to the DAQ machine via PCIe.
+
+\subsection{Light Digitization}\label{chap:DAQ:light}
+As for light signal from LArTPC, the Trigger Board has the ability to receive, via the crate controller, DAQ-issued calibration triggers (via software), which are used explicitly for electronics and light calibration. The various input triggers can be independently pre-scaled, masked, and mixed together (OR or AND) to generate an event trigger, ensuring full coverage of the ROI (Region of Interest). 
+The nominal option for the pGRAMS SiPM readout makes use of custom readout electronics designed originally for the MicroBooNE LArTPC experiment, and is a complement to the charge readout system. Specifically, the light readout system can be housed together with the charge readout system in the same custom crate with a backplane distributing power and clock signals to a number of electronics boards: The crate hosts six functional boards: (1) the \textbf{Crate Controller}, responsible for configuration and control at run start, status readback, and GPS timing readback, which also receives triggers from the trigger board and issues readout commands; (2) the \textbf{Shaper board}, which receives raw analog signals from the SiPMs, shapes them with a $\sim$60~ns rise time, and drives the shaped signals differentially to the ADC+FEM via front panel cables; (3) the \textbf{ADC+FEM board}, which performs digitization and data packaging and supports up to 64 channels (only one is be needed for pGRAMS); (4) the \textbf{Transmitter board (XMIT)}, responsible for shipping the ADC+FEM data, with hardware supporting two possible streams, triggered or continuous; (5) the \textbf{Trigger board}, which receives SiPM triggers from the ADC+FEM board and issues triggers to the crate controller via an ethernet connection; and (6) the \textbf{Clock module}, a 16~MHz precision clock responsible for providing timing through the backplane to all boards. The SiPM ADC+FEM and three shaper boards can sit in the same crate as the charge readout system described earlier, in which case no extra crate, controller, XMIT, clock, or trigger modules would be necessary. The Columbia light readout system therefore only requires 4 additional boards, in the form of 3 analog shaper boards (5V) and a single ADC+FEM board (12V/5V). 
+The analog waveforms enter the SiPM shaper board via LEMO inputs and are 50-Ohm terminated at the shaper. The shaped signals (unipolar shaping, 60ns shaping time) are sent to the ADC+FEM board differentially via short front panel cables, and are digitized by the ADC at 64 MHz. The baseline of the receiver is set at ADC mid‐range, 2048. After digitization, the digitized raw pulse is delayed by d=4 64 MHz samples and subtracted from itself, giving DIFF(i) = rawpulse(i)‐rawpulse(id), where d is a parameter configurable by the run control. This sharpens the pulse by removing any low frequency noise and baseline shifts. The value of d depends on the signal shaping time, and can be adjusted in order to maximize signal-to-noise ratio. If rawpulse(i)‐rawpulse(i‐d) is negative, DIFF(i) is set to zero. The DIFF pulse (which is NOT recorded but only used for generating readout conditions and triggering) is discriminated to determine whether rawpulse(i) should be read out, as well as to form a trigger. For any enabled channel, there are two discriminators, Discr 0 and Discr 1. Each has an independently set threshold value. A two‐level discrimination is used. Discr 0 is the first level of discrimination and is a precondition for Discr 1 firing. Discr 0 has a very low threshold and is used to determine the timing of a pulse, thus avoiding slewing. A second level of discrimination is applied by Discr 1. Discr 1 typically has higher thresholds and is used to determine the actual readout of data and define timing windows for possible SiPM trigger generation. If the discriminators fire on a particular channel, a configurable number of 64MHz samples for that particular channel associated with the fired discriminators will be stored in the FEM channel FIFO. If a trigger, issued by the trigger board, intercepts the FEM delay memory, the SRAM discriminated data over four clock frames surrounding the trigger time will be read out. Assuming the nominal choice of 100 $ \mu s$ per clock frame, this means 400 $ \mu s$ of SiPM data for every triggered event. The overall readout system's internal communication and data flow is described earlier in the charge DAQ part. The transmitter module initiates controlled and sequential readout of all ADC+FEM cards in the crate. The SiPM ADC+FEM stores four clock frames' worth of data for each event, including the frame in which the trigger was received, one frame before it, and two frames after it. A token-passing scheme is utilized to transfer data from each FEM board to the data transmitter module in a controlled way, whereby each FEM, in the order of closest to farthest away from the XMIT module, receives a token, transmits its data to the XMIT, and passes the token on to the next FEM in the sequence. It is necessary for the SiPM ADC+FEM to sit farther from the XMIT module than the TPC ADC+FEMs.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/ADC_FEM_SCHEM.png}
+    \caption[NEVIS DAQ schematic]{NEVIS DAQ schematic}
+    \label{fig:DAQ_schematic}
+\end{figure}
+
+% TODO: Need to increase the details of this section. Could use GSFC group's help
+\section{Time of Flight (TOF) and Multiplicity Detector (MPD)}\label{chap:TOF_MPD}
+As mentioned in system-level design, TOF and MPD are mounted on the tower. Figure~\ref{fig:pGRAMS_gondola} shows the physical location of TOF and MPD while Figure~\ref{fig:TOFMPD_scheme} shows the control schematics. 
+We have installed one top TOF panel and one middle TOF panel. Each panels are constructed with 24 paddles, which has readout on both sides. On each end of each individual TOF paddle, a front-end card with SiPM power and bias input is provided. All of these front-end cards collect the signal and pass it to the Front End Module (FEM), while getting bias voltage from the Bias Distribution Boards. On the signal readout line, signals are further digitized at a Front End Board (FEB/D) named TOFPET, which is a commercial part that is designed for multi-channel SiPM readout. At the same time, the trigger from the TPC and synchronization pulses are treated equally at the FEM end to let us synchronize and analyze data offline. After digitization, TOF data will be sent to the flight DAQ computer and saved to disk through ethernet. The Bias Distribution Boards are controlled by the Bias Control Boards, which are further controlled by the flight Hub compute. The MPD shares a similar control and readout chain.
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/pGRAMS_TOF_tower.png}
+    \caption[pGRAMS TOF tower sitting on bench]{pGRAMS TOF tower sitting on a bench. The black box indicates the Front End Board (FEB/D) TOFPET, originally designed for PET medical scanning. The Silver box mounted vertically on the back side is the box that hosts the Bias Control Boards.}
+    \label{fig:TOF_tower}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fig/pGRAMS_TOFMPD_scheme.png}
+    \caption[pGRAMS TOF/MPD schematics]{pGRAMS TOF/MPD schematics}
+    \label{fig:TOFMPD_scheme}
+\end{figure}
+
+% TODO: potentially add a calibration section depending on possible time available
+
+% TODO: finish this section with more detailed information, test result, tracks etc. Also add a updated mass measurement in this section.
+\section{Ground Validation}\label{chap:data}
+Each of the subsystems is tested and verified performance individually. The major ground validation are the detector performance with cosmic muons and radioactive sources.
+
+\section{Conclusion}\label{chap:conclusion}
+pGRAMS is a stratospheric balloon mission designed to demonstrate, for the first time, a Liquid Argon Time Projection Chamber (LArTPC) operating as a dual-purpose Compton camera and charged-particle tracker in flight. The payload serves as a scaled prototype for the future GRAMS science mission, which targets simultaneous MeV gamma-ray observations and an indirect dark matter search through low-energy cosmic-ray antinuclei. The miniGRAMS LArTPC provides a compact, cost-effective active volume capable of reconstructing Compton-scattering vertices and charged-particle tracks through combined charge and scintillation-light readout. The TOF and MPD subsystems surround the cryostat to provide charged-particle triggering, velocity measurement, and multiplicity information, enabling event-level particle identification and background rejection without the need for a magnet. Together, these subsystems allow pGRAMS to validate the core LArTPC-based detection concept, along with the cryostat, readout electronics, and flight software, ahead of a full-scale GRAMS science payload.
+
+The pGRAMS payload is currently under integration, with subsystem integration and testing ongoing at Northeastern University, Columbia University, and NASA Goddard Space Flight Center. This will be followed by integration testing with the flight provider, WorldView Enterprise, ahead of a targeted balloon flight window of Spring 2027. This publication details the novel detector systems and engineering design of the pGRAMS balloon payload.
+
+\section{Acknowledgments}\label{Acknowledgments}
+This work was supported by the NASA APRA grant, No.22-APRA22-0128 (80NSSC23K1661), and the Alfred P. Sloan Foundation in the US, as well as the Japan Society for the Promotion of Science (JSPS) in Japan. 
+
+% To print the credit authorship contribution details
+\printcredits
+
+%% Loading bibliography style file
+%\bibliographystyle{model1-num-names}
+\bibliographystyle{cas-model2-names}
+%\bibliographystyle{elsarticle-num}
+
+% Loading bibliography database
+\bibliography{cas-refs}
+
+% Biography
+%\bio{}
+% Here goes the biography details.
+%\endbio
+
+%\bio{pic1}
+% Here goes the biography details.
+%\endbio
+
+\end{document}
+
