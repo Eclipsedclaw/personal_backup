@@ -9,3 +9,8 @@
 *.DS_Store
 *.xml
 *.xdv
+*.png
+*.jpg
+*.jpeg
+*.bbl
+*.synctex.gz

@@ -1841,13 +1841,15 @@
        \footnotesize \itshape \stmaddress \par
        \group_end:
      }
-  % 
+  % keep abstract + keywords together so the split happens before them
+  \vbox:n {
   \dashrule{0pt}{3pt}
   \begin{Abstract}
     \noindent \ignorespaces
     \file_if_exist:nT { \jobname.abs } { \file_input:n { \jobname.abs } }
   \end{Abstract}
   \dashrule{3pt}{3pt}
+  }
   }
   \vbox_gset:Nn \g_stm_notes_box
   {  \cs_set_eq:NN \footnotetext \__fn_text:n  \printFirstPageNotes }
@@ -1877,7 +1879,7 @@
   % \iow_term:x { ...~[tmpa-notedp:~ \dim_use:N \g_tmpa_dim ] }
   \dim_gsub:Nn \g_tmpa_dim { \g_tmpb_dim }  
   \vbox_set_split_to_ht:NNn \g_tmpb_box \g_stm_front_box { \g_tmpa_dim }
-  \noindent \vbox_unpack_clear:N \g_tmpb_box 
+  \noindent \vbox_unpack_drop:N \g_tmpb_box 
   \printFirstPageNotes
   \dim_gzero:N \g_tmpa_dim
   \dim_gset:Nn \g_tmpa_dim { \box_ht:N \g_stm_front_box }
@@ -1887,15 +1889,15 @@
   \dim_compare:nNnTF { \dim_use:N \g_tmpa_dim } > { \the\textheight }
   {
     \vbox_set_split_to_ht:NNn \g_tmpb_box \g_stm_front_box { \textheight }
-    \vbox_unpack_clear:N \g_tmpb_box
+    \vbox_unpack_drop:N \g_tmpb_box
     \ifbool{dc}
-    { \twocolumn[{\vbox_unpack_clear:N \g_stm_front_box}] }
-    { \vbox_unpack_clear:N \g_stm_front_box }
+    { \twocolumn[{\vbox_unpack_drop:N \g_stm_front_box}] }
+    { \vbox_unpack_drop:N \g_stm_front_box }
   }
   {
     \ifbool{dc}
-    { \twocolumn[{\vbox_unpack_clear:N \g_stm_front_box}] }
-    { \vbox_unpack_clear:N \g_stm_front_box }
+    { \twocolumn[{\vbox_unpack_drop:N \g_stm_front_box}] }
+    { \vbox_unpack_drop:N \g_stm_front_box }
   } 
  \normalcolor \normalfont 
 }

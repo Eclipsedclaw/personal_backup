@@ -17,12 +17,12 @@
 %% Template article for cas-dc documentclass for 
 %% double column output.
 \PassOptionsToPackage{numbers,compress}{natbib}
-\documentclass[a4paper,fleqn]{cas-dc}
+%\documentclass[a4paper,fleqn]{cas-dc}
 
 % If the frontmatter runs over more than one page
 % use the longmktitle option.
 
-%\documentclass[a4paper,fleqn,longmktitle]{cas-dc}
+\documentclass[a4paper,fleqn,longmktitle]{cas-dc}
 
 \usepackage[numbers,compress]{natbib}
 %\usepackage[authoryear]{natbib}
@@ -56,7 +56,7 @@
 \shortauthors{J. Zeng et~al.}
 
 % Main title of the paper
-\title [mode = title]{A Stratospheric Liquid Argon Time Projection Chamber: The prototype Gamma-Ray and AntiMatter Survey (pGRAMS) Balloon Payload}  
+\title [mode = title]{A Stratospheric Liquid Argon Time Projection Chamber: The Prototype Gamma-Ray and AntiMatter Survey (pGRAMS) Balloon Payload}  
 
 % Title footnote mark
 % eg: \tnotemark[1]
@@ -82,7 +82,7 @@
                 addressline={360 Huntington Ave},
                 city={Boston},
 %               citysep={}, % Uncomment if no comma needed between city and postcode
-                postcode={02151},
+                postcode={02115},
                 state={MA},
                 country={USA}}
 
@@ -100,7 +100,6 @@
                 addressline={3-4-1 Okubo, Shinjuku-ku},
                 city={Tokyo},
                 postcode={169-8555},
-                state={NAN},
                 country={Japan}}
 
 \affiliation[4]{organization={Japan Aerospace Exploration Agency (JAXA)},
@@ -111,10 +110,9 @@
                 country={Japan}}
 
 \affiliation[5]{organization={Department of Physics, University of Tokyo},
-                addressline={NAN},
+                addressline={7-3-1 Hongo, Bunkyo-ku},
                 city={Tokyo},
                 postcode={113-0033},
-                state={NAN},
                 country={Japan}}
 
 
@@ -139,7 +137,7 @@
                 state={CT},
                 country={USA}}
 
-\affiliation[9]{organization={Department of Physics, Washington University at St. Louis},
+\affiliation[9]{organization={Department of Physics, Washington University in St. Louis},
                 addressline={One Brookings Drive},
                 city={St. Louis},
                 postcode={63130-4899},
@@ -168,10 +166,9 @@
                 country={Japan}}
 
 \affiliation[13]{organization={Department of Physics, Faculty of Engineering Science, Yokohama National University},
-                addressline={NAN},
+                %addressline={NAN},
                 city={Yokohama},
                 postcode={240-8501},
-                state={NAN},
                 country={Japan}}
 
 \affiliation[14]{organization={RIKEN Nishina Center},
@@ -183,9 +180,9 @@
 
 \affiliation[15]{organization={Interdisciplinary Theoretical \& Mathematical Science Program (iTHEMS), RIKEN},
                 addressline={2-1 Hirosawa},
-                city={NAN},
+                %addressline={NAN},
+                %city={NAN},
                 postcode={351-0198},
-                state={NAN},
                 country={Japan}}
 
 \affiliation[16]{organization={Kavli Institute for the Physics and Mathematics of the Universe (WPI), UTIAS, The University of Tokyo},
@@ -196,21 +193,20 @@
                 country={Japan}}
 
 \affiliation[17]{organization={Department of Physics, Columbia University},
-                addressline={NAN},
+                %addressline={NAN},
                 city={New York},
                 postcode={10027},
                 state={NY},
                 country={USA}}
 
-\affiliation[18]{organization={Key Laboratory of Particle Astrophyics, Institute of High Energy Physics, Chinese Academy of Sciences},
-                addressline={NAN},
+\affiliation[18]{organization={Key Laboratory of Particle Astrophysics, Institute of High Energy Physics, Chinese Academy of Sciences},
+                %addressline={NAN},
                 city={Beijing},
                 postcode={100049},
-                state={NAN},
                 country={China}}
 
 \affiliation[19]{organization={Tianfu Cosmic Ray Research Center},
-                addressline={NAN},
+                %addressline={NAN},
                 city={Chengdu},
                 postcode={610000},
                 state={Sichuan},
@@ -276,7 +272,6 @@
                 addressline={Emil-Fischer-Str. 31 / Sanderring 2},
                 city={W\"{u}rzburg},
                 postcode={97074 / 97070},
-                state={NAN},
                 country={Germany}}
 
 
@@ -327,7 +322,6 @@
 \author[3,4]{K. Aoyama}
 \author[5]{S. Arai}
 \author[3]{S. Arai}
-\author[2]{T. Aramaki}
 \author[6]{J. Asaadi}
 \author[5]{A. Bamba}
 
@@ -440,7 +434,14 @@
 
 % Here goes the abstract
 \begin{abstract}
-The Gamma-Ray and AntiMatter Survey (GRAMS) is a next-generation long-duration ballooning (LDB) experiment using a Liquid Argon Time Projection Chamber (LArTPC) detector to measure MeV gamma rays and antiparticles. MeV gamma-ray observations are important for understanding multi-messenger and time-domain astronomy, enabling exploration of the universe's most potent events, such as supernovae and neutron star mergers. Building on the scientific significance of MeV gamma rays, GRAMS will explore the 'MeV gap', improving measurement sensitivity that has historically been limited by challenges in reconstructing Compton scatter events. In addition, the GRAMS detection concept doubles as an antiparticle spectrometer, targeting low-energy cosmic antinuclei. To validate this dual-detection concept, preparations are advancing toward a spring 2027 balloon flight of a small-scale LArTPC, the prototype GRAMS (pGRAMS) mission. These ongoing efforts establish the core design, functionality, and performance baseline for the pGRAMS instrument.
+The Gamma-Ray and AntiMatter Survey (GRAMS) is a proposed long-duration balloon mission that uses a large liquid argon time projection chamber (LArTPC) both as a Compton telescope for MeV gamma rays and as a spectrometer for low-energy cosmic-ray antinuclei, an indirect probe of dark matter.
+The prototype GRAMS (pGRAMS) payload is being prepared for a stratospheric balloon flight in spring 2027 to demonstrate LArTPC operation, Compton-event detection, and charged-particle tracking at float altitude.
+Its core detector, miniGRAMS, is a $30\times30\times10~\mathrm{cm^3}$ LArTPC divided into a $3\times3$ array of $10~\mathrm{cm}$ cells.
+Ionization electrons are collected on a cross-strip anode tile with 90 X and 90 Y strips at $3~\mathrm{mm}$ pitch, read out by 180 cryogenic charge-sensitive preamplifiers, while scintillation light is detected by 144 silicon photomultipliers below the cathode.
+The detector is housed in a ``bell-jar'' cryostat whose heavy flanges sit at the bottom, outside the field of view.
+Two time-of-flight (TOF) scintillator layers above the cryostat and a multiplicity detector (MPD) on its four sides provide charged-particle velocity, multiplicity, and veto information.
+The 600~kg payload draws about 295~W from batteries for at least 12~h of operation.
+We describe the design of each subsystem and report ground-test results, including a preamplifier noise of 18.92~keV FWHM (757~e$^{-}$ rms) at 50~pF input capacitance and 5~$\mu$s shaping time.
 \end{abstract}
 
 % Use if graphical abstract is present
@@ -461,24 +462,27 @@ The Gamma-Ray and AntiMatter Survey (GRAMS) is a next-generation long-duration b
 % Keywords
 % Each keyword is seperated by \sep
 \begin{keywords}
-LArTPC \sep MeV gamma-ray \sep Dark Matter \sep GRAMS \sep antinucleus \sep Scintillation detectors \sep Balloon instrumentation 
+Liquid argon TPC \sep MeV gamma-ray astronomy \sep Compton telescope \sep Cosmic-ray antinuclei \sep Balloon-borne instrumentation \sep Silicon photomultipliers
 \end{keywords}
 
+% lineno's per-line penalties force longmktitle to split right after the title
+\nolinenumbers
 \maketitle
+\linenumbers
 
 % Main text
 \section{Introduction}\label{chap:Introduction}
-MeV gamma ray astronomy occupies a scientifically rich yet observationally challenging frontier in modern astrophysics, bridging the gap between soft X-Ray and high-energy GeV observations. Photons in the MeV energy range (approximately 0.1–100 MeV) serve as unique messengers for studying some of the most extreme physical processes in the universe, providing a direct observational probe of cosmic environments. This energy band is unique because it is the primary domain of nuclear transitions and antimatter annihilation. While lower-energy X-rays trace thermal processes and high-energy GeV/TeV gamma rays trace non-thermal emission mechanisms, MeV gamma rays directly encode the universe's fundamental nuclear physics. Due to dominance of Compton scattering, the MeV gap has been long under explored since the Imagine Compton Telescope (COMPTEL) experiment launched in 1991 as one of the four main instruments on NASA's Compton Gamma-Ray Observatory (CGRO) \cite{refId0, refId1, much1995comptel}. The current observation sensitivity of MeV band photons is significantly lower than that in X-Rays and high-energy GeV gamma-rays, resulting in the famous "MeV Gap" problem \cite{aramaki2020dual}.
+MeV gamma ray astronomy occupies a scientifically rich yet observationally challenging frontier in modern astrophysics, bridging the gap between hard X-ray and high-energy GeV observations. Photons in the MeV energy range (approximately 0.1–100 MeV) serve as unique messengers for studying some of the most extreme physical processes in the universe, providing a direct observational probe of cosmic environments. This energy band is unique because it is the primary domain of nuclear transitions and antimatter annihilation. While lower-energy X-rays trace thermal processes and high-energy GeV/TeV gamma rays trace non-thermal emission mechanisms, MeV gamma rays directly encode the universe's fundamental nuclear physics. Due to dominance of Compton scattering, the MeV gap has been long under explored since the Imaging Compton Telescope (COMPTEL) experiment launched in 1991 as one of the four main instruments on NASA's Compton Gamma-Ray Observatory (CGRO) \cite{refId0, much1995comptel}. The current observation sensitivity of MeV band photons is significantly lower than that in X-rays and high-energy GeV gamma-rays, resulting in the famous "MeV Gap" problem \cite{aramaki2020dual}.
 
 
-Thus, multiple experiments optimized for MeV region were formed. Next-generation satellite experiments specifically targeting MeV gamma-rays include COSI (Compton Spectrometer and Imager) \cite{Tomsick2023Compton}, selected by NASA as a Small Explorer mission scheduled for launch in 2025, which will survey the sky between 0.2–5 MeV with a wide field of view, optimized for detecting spectral lines from positron annihilation and radioactive isotopes. Other proposed missions include e-ASTROGAM (0.3–3 MeV) \cite{DEANGELIS20181}, AMEGO/AMEGO-X (0.2–10000 MeV), and balloon-borne experiments such as GRAMS (Gamma-Ray and AntiMatter Survey) \cite{10.1117/12.2562352}. There are also many future MeV missions targeting on satellite  \cite{sun2026developmentnovelcomptoncamera, shutt2025gammatpcgammaraytelescopeconcept}, giving a bright hope of exploring MeV region thoroughly in the next decade.
+Thus, multiple experiments optimized for MeV region were formed. Next-generation satellite experiments specifically targeting MeV gamma-rays include COSI (Compton Spectrometer and Imager) \cite{Tomsick2023Compton}, selected by NASA as a Small Explorer mission scheduled for launch in late 2027, which will survey the sky between 0.2–5 MeV with a wide field of view, optimized for detecting spectral lines from positron annihilation and radioactive isotopes. Other proposed missions include e-ASTROGAM (0.3 MeV–3 GeV) \cite{DEANGELIS20181}, AMEGO/AMEGO-X (0.2–10000 MeV) \cite{10.1117/12.2562352}, and balloon-borne experiments such as GRAMS (Gamma-Ray and AntiMatter Survey) . There are also many future MeV missions targeting on satellite  \cite{sun2026developmentnovelcomptoncamera, shutt2025gammatpcgammaraytelescopeconcept}, giving a bright hope of exploring MeV region thoroughly in the next decade.
 
-At the same time, cosmic-ray based rare antinucleus event searches have become increasingly important since the beginning of the century, see Figure~\ref{fig:cosmic_flux}. Cosmic antiprotons have been measured from the AMS and BESS experiments, which leave open questions about the origin and the mechanism of its flux \cite{PhysRevLett.117.091103, YAMAMOTO2013227, sakai2021new}. The antiproton is the largest component of all cosmic antinuclei, which could be generated by energetic cosmic protons interacting with Interstellar Medium \cite{Moskalenko_2002, kiraly1981antiprotons}. While a lot of studies conducted have revealed the potential of indirectly detecting dark matter using sub-GeV antideuteron and antihelium-3 \cite{PhysRevD.102.063004, Doetinchem_2020, PhysRevD.62.043003, Baer_2005, PhysRevD.78.043506, PhysRevD.71.083013, Alejandro_Ibarra_2013,PhysRevD.88.023014, N.Fornengo_2013, PhysRevD.89.103504, PhysRevD.97.103011, Tomassetti:2017DQ, lin2018expectationscosmicantideuteronflux, Ding_2019, 10.1007/jhep082014009, PhysRevD.89.076005, PhysRevD.96.083020, ZENG2025103152}. The GAPS experiment which orientated toward low energy cosmic antinucleus detection had a successful Antarctic balloon flight in the beginning of 2026.
+At the same time, cosmic-ray based rare antinucleus event searches have become increasingly important since the beginning of the century, see Figure~\ref{fig:cosmic_flux}. Cosmic antiprotons have been measured from the AMS and BESS experiments, which leave open questions about the origin and the mechanism of its flux \cite{PhysRevLett.117.091103, YAMAMOTO2013227, sakai2021new}. The antiproton is the largest component of all cosmic antinuclei, which could be generated by energetic cosmic protons interacting with Interstellar Medium \cite{Moskalenko_2002, kiraly1981antiprotons}. While a lot of studies conducted have revealed the potential of indirectly detecting dark matter using sub-GeV antideuteron and antihelium-3 \cite{PhysRevD.102.063004, Doetinchem_2020, PhysRevD.62.043003, Baer_2005, PhysRevD.78.043506, PhysRevD.71.083013, Alejandro_Ibarra_2013,PhysRevD.88.023014, N.Fornengo_2013, PhysRevD.89.103504, PhysRevD.97.103011, Tomassetti:2017DQ, lin2018expectationscosmicantideuteronflux, Ding_2019, 10.1007/jhep082014009, PhysRevD.89.076005, PhysRevD.96.083020, ZENG2025103152}. The GAPS experiment which orientated toward low energy cosmic antinucleus detection had a successful Antarctic balloon flight during the 2025/26 Antarctic campaign \cite{thegapscollaboration2026generalantiparticlespectrometergaps}.
 
 \begin{figure*}
     \centering
     \includegraphics[width=1\linewidth]{fig/cosmic_ray_low_energy.png}\\
-    \caption[Flux of some cosmic-ray inside GeV energy range]{Flux of some cosmic-ray inside GeV energy range. Left plot shows fluxes of experiment or model prediction \cite{PhysRevLett.117.091103, Jin_2015, Abe_2016, PhysRevLett.108.051102, PhysRevLett.132.131001, PhysRevLett.118.191101, donato2008antideuteron} while right plot added some experiments' sensitivity towards each individual cosmic-ray species. \cite{ZENG2025103152, PhysRevLett.132.131001, zeng2026development, Kounine:2011bkq, SAFFOLD2021102580, ARAMAKI20166}}
+    \caption[Flux of some cosmic-ray inside GeV energy range]{Flux of some cosmic-ray inside GeV energy range. Left plot shows fluxes of experiment or model prediction \cite{PhysRevLett.117.091103, Jin_2015, Abe_2016, PhysRevLett.108.051102, PhysRevLett.132.131001, PhysRevLett.118.191101, PhysRevD.78.043506} while right plot added some experiments' sensitivity towards each individual cosmic-ray species. \cite{ZENG2025103152, PhysRevLett.132.131001, zeng2026development, Kounine:2011bkq, SAFFOLD2021102580, ARAMAKI20166}}
     \label{fig:cosmic_flux}
 \end{figure*}
 
@@ -612,9 +616,9 @@ On the other hand, a series of discrete commands are established to control crit
 
 
 \section{LArTPC Detector}\label{chap:detector}
-The Liquid Argon Time Projection Chamber (LArTPC) is a powerful detection technology that has evolved significantly since its inception. The concept was first proposed by Nygren in 1974 as a method for precision tracking and calorimetry in particle physics experiments \cite{NYGREN201822}. Early implementations demonstrated the technology's ability to provide excellent spatial resolution and energy reconstruction capabilities through ionization charge collection in a liquid argon medium.
+The Liquid Argon Time Projection Chamber (LArTPC) is a powerful detection technology that has evolved significantly since its inception. The gas argon TPC concept was first proposed by Nygren in 1974 \cite{NYGREN201822}. Then in 1977, the LArTPC was proposed by Rubbia as a method for precision tracking and calorimetry in particle physics experiments \cite{Rubbia:117852}. Early implementations demonstrated the technology's ability to provide excellent spatial resolution and energy reconstruction capabilities through ionization charge collection in a liquid argon medium.
 
-Over the decades, LArTPC technology has matured through numerous experiments, including the pioneering work at Fermilab and subsequent large-scale implementations. The technology gained prominence with experiments such as MicroBooNE, which validated LArTPC performance for neutrino detection \cite{MicroBooNE:2007ivj}. More recently, the Deep Underground Neutrino Experiment (DUNE) has adopted LArTPC as its primary detection technology for next-generation physics research. The key advantages of LArTPC detectors include exceptional spatial resolution (sub-millimeter scale), excellent calorimetric capabilities for energy measurement, and the ability to reconstruct complex particle interaction topologies \cite{FALCONE2022167217}. These characteristics make LArTPC technology particularly suitable for both astrophysical gamma-ray observations and rare event searches, as demonstrated by the GRAMS mission.
+Over the decades, LArTPC technology has matured through numerous experiments, including the pioneering work in ICARUS experiment and subsequent large-scale implementations. The technology gained prominence with experiments such as MicroBooNE, which validated LArTPC performance for neutrino detection \cite{Acciarri_2017}. More recently, the Deep Underground Neutrino Experiment (DUNE) has adopted LArTPC as its primary detection technology for next-generation neutrino research. The key advantages of LArTPC detectors include exceptional spatial resolution (sub-millimeter scale), excellent calorimetric capabilities for energy measurement, and the ability to reconstruct complex particle interaction topologies \cite{FALCONE2022167217}. These characteristics make LArTPC technology particularly suitable for both astrophysical gamma-ray observations and rare event searches, as demonstrated by the GRAMS mission.
 
 The LArTPC operates on the principle of ionization charge collection in liquid argon. When a charged-particle traverses the detector volume, it ionizes argon atoms along its path, creating electron-ion pairs. An applied electric field drifts the free electrons toward the anode (charge readout plane), while the ions drift toward the cathode. The charge collected at the anode is proportional to the energy deposited by the particle, enabling precise energy measurement and calorimetry.
 
@@ -677,7 +681,7 @@ The CSP was successfully operated at liquid argon temperature and achieved perfo
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fig/CSP_bench_test.png}
-    \caption[CSP bench test setup and result from different configurations]{CSP bench test setup and result from different configurations. The figure on the left shows the setup of the bench. Red line shows empty end noise evaluation, while 50pF are detector strips equivalent capacitance. Grey line shows the best performance, giving a best energy resolution at 18.92 keV}
+    \caption[CSP bench test setup and result from different configurations]{CSP bench test setup and result from different configurations. The figure on top shows the setup of the bench. Red line shows empty end noise evaluation, while 50pF are detector strips equivalent capacitance. Grey line shows the best performance, giving a best energy resolution at 18.92 keV}
     \label{fig:CSP_testbench}
 \end{figure}
 
@@ -741,7 +745,7 @@ The pGRAMS payload is currently under integration, with subsystem integration an
 This work was supported by the NASA APRA grant, No.22-APRA22-0128 (80NSSC23K1661), and the Alfred P. Sloan Foundation in the US, as well as the Japan Society for the Promotion of Science (JSPS) in Japan. 
 
 % To print the credit authorship contribution details
-\printcredits
+% \printcredits
 
 %% Loading bibliography style file
 %\bibliographystyle{model1-num-names}
