@@ -1,0 +1,615 @@
+% =====================================================================
+%  Compton camera sky planner: orbit, sky-coverage and exposure tools
+%  Skeleton for an arXiv (astro-ph.IM) instrumentation/software note.
+%
+%  Search for \todo{...} to find every place that still needs content.
+%  To hide all TODO notes for submission, set \showtodostrue to false
+%  (change \showtodostrue below to \showtodosfalse).
+%
+%  Figures: the file names below are the ones written by the scripts.
+%  Put the PNG/PDF files next to this .tex file. Missing figures are
+%  drawn as labelled boxes, so the document compiles at any stage.
+% =====================================================================
+\documentclass[a4paper,fleqn]{cas-sc}
+
+% ---------- packages ----------
+% cas-sc already loads graphicx, amsmath/amssymb, booktabs, xcolor,
+% hyperref, fontenc and its own page geometry and fonts.
+\usepackage[utf8]{inputenc}
+\usepackage{siunitx}
+\usepackage[square,numbers,sort&compress]{natbib}
+\usepackage{url}
+\usepackage{caption}
+\usepackage{orcidlink}
+% ORCID icon after an author name: shown in the author list, hidden in the
+% e-mail/ORCID footnotes and the PDF metadata
+\NewDocumentCommand{\authororcid}{m}{\,\orcidlink{#1}}
+\makeatletter
+\let\ccsp@makefntext\@makefntext
+\renewcommand\@makefntext[1]{\ccsp@makefntext{\let\authororcid\@gobble#1}}
+\AtBeginDocument{\pdfstringdefDisableCommands{\let\authororcid\@gobble}}
+\makeatother
+% Do not print the "ORCID(s): ..." line in the title-page footnote
+\RenewDocumentCommand{\printorcid}{}{}
+\captionsetup{font=small,labelfont=bf}
+\hypersetup{linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black}
+
+% ---------- editing helpers ----------
+\newif\ifshowtodos
+\showtodostrue          % change to \showtodosfalse before submission
+\newcommand{\todo}[1]{\ifshowtodos{\color{red!70!black}\textbf{[TODO:} #1\textbf{]}}\fi}
+
+% Include a figure if the file exists, otherwise draw a placeholder box
+\newcommand{\figfile}[2][\linewidth]{%
+  \IfFileExists{#2}{\includegraphics[width=#1]{#2}}{%
+    \fbox{\parbox[c][0.28\textheight][c]{0.95#1}{\centering\ttfamily missing figure:\\ \detokenize{#2}}}}}
+
+% ---------- notation ----------
+\newcommand{\RE}{R_{\oplus}}
+\newcommand{\vect}[1]{\hat{\mathbf{#1}}}
+\newcommand{\LTDN}{\mathrm{LTDN}}
+\newcommand{\dg}{^\circ}   % degree sign in math mode
+\sisetup{per-mode=symbol,range-phrase=--}
+
+% cas-sc: title, authors and \cormark/\ead must come after \begin{document},
+% because they write to the .aux file
+\begin{document}
+
+% ---------- title ----------
+\shorttitle{Compton Camera Sky Planner}
+\shortauthors{J. Zeng et al.}
+
+\title[mode=title]{Compton Camera Sky Planner: An orbit and sky-coverage
+  planning tool for a sun-synchronous Compton camera mission}
+
+% ---------- authors ----------
+% To add an author, copy one \author block and give it the matching
+% affiliation number(s), e.g. \author[1,2]{...}. Mark corresponding
+% authors with \cormark[1] and give their e-mail with \ead{...}.
+
+% First author
+\author[1,2]{Jiancheng Zeng\authororcid{0000-0002-4157-1964}}[type=editor,
+      auid=000,
+      bioid=1,
+      %prefix=Sir,
+      orcid=0000-0002-4157-1964,
+      %facebook=<facebook id>,
+      %twitter=<twitter id>,
+      %linkedin=<linkedin id>,
+      %gplus=<gplus id>
+      ]
+
+\author[2]{Pingwei Sun\authororcid{0009-0003-6749-9360}}[type=editor,
+      auid=000,
+      bioid=1,
+      %prefix=Sir,
+      orcid=0009-0003-6749-9360,
+      %facebook=<facebook id>,
+      %twitter=<twitter id>,
+      %linkedin=<linkedin id>,
+      %gplus=<gplus id>
+      ]
+
+\author[2]{Mengjiao Xiao\authororcid{0000-0002-6397-617X}}[type=editor,
+      auid=000,
+      bioid=1,
+      %prefix=Sir,
+      orcid=0000-0002-6397-617X,
+      %facebook=<facebook id>,
+      %twitter=<twitter id>,
+      %linkedin=<linkedin id>,
+      %gplus=<gplus id>
+      ]
+\cormark[1]
+\ead{xmjzcc@sjtu.edu.cn}
+
+%%%%%%%% Affiliation %%%%%%%%
+\affiliation[1]{organization={State Key Laboratory of Dark Matter Physics, Key Laboratory for Particle Astrophysics and Cosmology (MoE), Shanghai Key Laboratory for Particle Physics and Cosmology, Tsung-Dao Lee Institute, Shanghai Jiao Tong University},
+                addressline={No. 1 Lisuo Road},
+                %city={Pudong New Area},
+%               citysep={}, % Uncomment if no comma needed between city and postcode
+                postcode={201210},
+                state={Shanghai},
+                country={China}}
+
+\affiliation[2]{organization={State Key Laboratory of Dark Matter Physics, Key Laboratory for Particle Astrophysics and Cosmology (MoE), Shanghai Key Laboratory for Particle Physics and Cosmology, School of Physics and Astronomy, Shanghai Jiao Tong University},
+                addressline={800 Dongchuan Road},
+                %city={Pudong New Area},
+%               citysep={}, % Uncomment if no comma needed between city and postcode
+                postcode={201210},
+                state={Shanghai},
+                country={China}}
+
+\cortext[1]{Corresponding author}
+
+% =====================================================================
+% cas-sc requires the abstract and keywords before \maketitle
+\begin{abstract}
+\todo{Write last, 150--250 words.} Suggested outline:
+(1) context: MeV gamma-ray astronomy and the planned Compton camera on a
+commercial micro-satellite;
+(2) the need for planning tools: orbit, eclipse, SAA, sky coverage and source
+visibility for a wide-field, non-steered instrument;
+(3) what we present: Python scripts for the ground track and the celestial
+track, and a self-contained browser application with zenith, Sun-tracking and
+fixed-target pointing, including Earth occultation;
+(4) the model: circular orbit with $J_2$ secular terms in a
+\SI{525}{km}, \SI{97.5}{\degree}, LTDN 10:30 sun-synchronous orbit;
+(5) key results, e.g.\ the seasonal visibility of the Crab, the time in view of
+the 20 COMPTEL-era sources, and validation against analytic expectations;
+(6) availability: open source at
+\url{https://github.com/Eclipsedclaw/compton_satellite_sim}.
+\end{abstract}
+
+\begin{keywords}
+gamma-ray astronomy \sep Compton camera \sep mission planning \sep
+sun-synchronous orbit \sep sky coverage \sep exposure \sep software
+\end{keywords}
+
+\maketitle
+
+% =====================================================================
+\section{Introduction}
+\label{sec:intro}
+
+\todo{Motivation.} The MeV band has remained comparatively unexplored since
+COMPTEL on the Compton Gamma Ray Observatory \cite{Schoenfelder1993,
+Schoenfelder2000}. Cross-matches of the hard X-ray and GeV catalogues identify
+many promising MeV sources \cite{Tsuji2021}, and several missions and
+pathfinders are in preparation \citep[e.g.][]{Tomsick2019}.
+
+\todo{Our instrument.} Briefly introduce the Compton camera prototype and its
+planned flight on a commercial micro-satellite \cite{CameraPaper}.
+
+\todo{The planning problem.} For a payload that is not steered independently
+of the spacecraft, the sky coverage follows from the orbit and the platform
+attitude. Questions that arise before launch: where the satellite is during
+the first orbits, when it is in eclipse or in the South Atlantic Anomaly (SAA),
+which parts of the sky the camera sees on a given day, and how the visibility
+of key sources changes through the year and with the pointing strategy.
+
+\todo{Contribution.} Summarise the tools (Section~\ref{sec:software}) and the
+main results (Section~\ref{sec:results}). State that the code is open source
+(see the Code availability section).
+
+\todo{Paper outline.} Section~\ref{sec:mission} describes the mission and
+orbit; Section~\ref{sec:orbit} the orbit model; Section~\ref{sec:sky} the
+celestial-sphere geometry and pointing modes; Section~\ref{sec:exposure} the
+exposure definition; Section~\ref{sec:software} the software;
+Section~\ref{sec:validation} the validation; Section~\ref{sec:results} example
+results; Section~\ref{sec:limits} limitations and future work.
+
+% =====================================================================
+\section{Mission and instrument overview}
+\label{sec:mission}
+
+\subsection{The Compton camera}
+\label{sec:camera}
+\todo{Detector layers, materials, read-out, energy range, angular resolution,
+field of view, expected effective area. Cite the instrument paper.}
+
+\subsection{Spacecraft and orbit}
+\label{sec:orbitparams}
+The orbit parameters provided by the satellite operator are listed in
+Table~\ref{tab:orbit}. \todo{Host platform, attitude-control capability,
+mounting of the camera, expected launch vehicle and date.}
+
+\begin{table}[ht]
+\centering
+\caption{Nominal orbit and launch parameters used throughout this work.}
+\label{tab:orbit}
+\begin{tabular}{ll}
+\toprule
+Parameter & Value \\
+\midrule
+Orbit type & circular, sun-synchronous \\
+Altitude $h$ & \SI{525}{km} \\
+Inclination $i$ & \SI{97.5}{\degree} \\
+Local time of descending node (LTDN) & 10:30 \\
+Orbital period & \SI{95.26}{min} \\
+Revolutions per day & 15.12 \\
+Launch site (default) & Qingdao, \SI{36.5}{\degree}\,N, \SI{120.0}{\degree}\,E \todo{confirm} \\
+Launch date (assumed) & 2026-11-01 \todo{update} \\
+Camera pointing (baseline) & local zenith \todo{confirm} \\
+Field-of-view half-angle (assumed) & \SI{20}{\degree} \todo{update from simulation} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% =====================================================================
+\section{Orbit model}
+\label{sec:orbit}
+
+\subsection{Circular orbit with $J_2$ secular terms}
+For a circular orbit of radius $a=\RE+h$, the mean motion is
+$n=\sqrt{\mu/a^{3}}$. Earth's oblateness ($J_2$) causes secular drifts of the
+right ascension of the ascending node $\Omega$ and of the argument of
+latitude $u$ \cite{Vallado2013}:
+\begin{align}
+  \dot\Omega &= -\frac{3}{2}\,n\,J_2\left(\frac{\RE}{a}\right)^{2}\cos i,
+  \label{eq:raandot}\\
+  \dot u &= n\left[1+\frac{3}{4}\,J_2\left(\frac{\RE}{a}\right)^{2}
+           \left(6-8\sin^{2} i\right)\right].
+  \label{eq:udot}
+\end{align}
+We use $\mu=\SI{398600.4418}{km^3.s^{-2}}$, $\RE=\SI{6378.137}{km}$ and
+$J_2=1.08263\times10^{-3}$.
+
+\subsection{Sun-synchronous condition}
+The orbit is sun-synchronous when $\dot\Omega$ equals the mean motion of the
+Sun along the equator,
+\begin{equation}
+  \dot\Omega_{\odot}=\frac{2\pi}{365.2422\ \mathrm{d}}
+  \approx \SI{0.9856}{\degree\per d},
+  \label{eq:sso}
+\end{equation}
+which at $h=\SI{525}{km}$ requires $i=\SI{97.50}{\degree}$, in agreement with
+the operator's value.
+
+\subsection{Orientation from the local time of the descending node}
+The descending node crosses the equator at mean local solar time
+$\LTDN$. With $\alpha_{\odot,\mathrm{m}}(t)$ the right ascension of the mean
+Sun, the ascending node is placed at
+\begin{equation}
+  \Omega(t) = \alpha_{\odot,\mathrm{m}}(t) + 15\dg\,(\LTDN-12\,\mathrm{h}) + 180\dg ,
+  \label{eq:raan}
+\end{equation}
+with $\LTDN$ in hours. \todo{State the low-precision expressions used for
+$\alpha_{\odot,\mathrm{m}}$, the true Sun and GMST, e.g.\ from
+\citet{Meeus1998}.}
+
+\subsection{Position, ground track and launch time}
+The unit vector to the satellite in the (approximately J2000) equatorial frame
+is
+\begin{equation}
+  \vect{r} =
+  \begin{pmatrix}
+    \cos\Omega\cos u-\sin\Omega\sin u\cos i\\
+    \sin\Omega\cos u+\cos\Omega\sin u\cos i\\
+    \sin u\sin i
+  \end{pmatrix},
+  \qquad
+  u(t)=u_0+\dot u\,t,\quad \Omega(t)=\Omega_0+\dot\Omega\,t .
+  \label{eq:rhat}
+\end{equation}
+The sub-satellite longitude is the right ascension of $\vect{r}$ minus the
+Greenwich mean sidereal time; the latitude is geocentric.
+
+\paragraph{Launch time.} We model the launch as the instant at which the launch
+site (latitude $\varphi_s$, longitude $\lambda_s$) lies in the orbital plane on
+a southbound pass, as is usual for sun-synchronous launches from Chinese
+sites. The argument of latitude at the site is
+$u_s=\pi-\arcsin(\sin\varphi_s/\sin i)$, and the launch time solves
+\begin{equation}
+  \Omega(t)+\Delta\alpha(u_s) = \theta_{\mathrm{GMST}}(t)+\lambda_s,
+  \qquad
+  \Delta\alpha(u_s)=\operatorname{atan2}(\cos i\sin u_s,\ \cos u_s),
+  \label{eq:launch}
+\end{equation}
+found by a coarse scan followed by bisection. For Qingdao this gives
+02:52\,UTC (10:52 Beijing time), nearly independent of the date.
+\todo{Discuss the offset between lift-off and orbit insertion.}
+
+\subsection{Eclipse and South Atlantic Anomaly}
+The satellite is in Earth's shadow when
+$\mathbf{r}\cdot\vect{s}_\odot<0$ and
+$|\mathbf{r}-(\mathbf{r}\cdot\vect{s}_\odot)\vect{s}_\odot|<\RE$
+(cylindrical shadow, no penumbra). The SAA is approximated by an ellipse
+centred at (\SI{50}{\degree}\,W, \SI{26}{\degree}\,S) with semi-axes
+\SI{45}{\degree} and \SI{18}{\degree}. \todo{Replace with the operator's SAA
+polygon or an AP9/AE9 flux contour \cite{Ginet2013}.}
+
+\subsection{Geomagnetic cutoff rigidity (optional)}
+For background studies the ground-track script can overlay the Størmer
+vertical cutoff \cite{Stormer1955},
+\begin{equation}
+  R_c \simeq \frac{\SI{14.9}{GV}\,\cos^{4}\lambda_m}{(r/R_{\mathrm{ref}})^{2}},
+  \label{eq:stormer}
+\end{equation}
+with $\lambda_m$ the centred-dipole geomagnetic latitude from the IGRF
+\cite{IGRF14}. \todo{Decide whether to keep this subsection.}
+
+% =====================================================================
+\section{Celestial-sphere geometry and pointing}
+\label{sec:sky}
+
+\subsection{The camera-axis track}
+For zenith pointing the camera axis is $\vect{a}=\vect{r}$, so on the
+celestial sphere it traces the great circle of the orbital plane. Because the
+direction of $\vect{a}$ does not depend on Earth's rotation, all orbits of one
+day trace practically the same circle; the circle rotates with the Sun at
+$\dot\Omega_\odot$ and returns to its initial orientation after one year.
+\todo{Add a schematic figure if helpful.}
+
+\subsection{Field-of-view band}
+With orbit normal
+$\vect{h}=(\sin i\sin\Omega,\,-\sin i\cos\Omega,\,\cos i)$ and field-of-view
+half-angle $\theta_{\mathrm{FoV}}$, a source in direction $\vect{s}$ enters
+the field of view at some time during the day if
+\begin{equation}
+  |\vect{s}\cdot\vect{h}|\le\sin\theta_{\mathrm{FoV}},
+  \label{eq:band}
+\end{equation}
+and it is in the field of view at time $t$ if
+$\vect{s}\cdot\vect{a}(t)\ge\cos\theta_{\mathrm{FoV}}$.
+
+\subsection{Pointing modes}
+\label{sec:pointing}
+The web tool supports three attitude modes:
+\begin{itemize}
+  \item \textbf{Zenith:} $\vect{a}=\vect{r}$ (baseline);
+  \item \textbf{Sun tracking:} $\vect{a}=\vect{s}_\odot(t)$;
+  \item \textbf{Fixed target:} $\vect{a}=\vect{s}_{\mathrm{target}}$, e.g.\
+        the Galactic Center or any (RA, Dec).
+\end{itemize}
+\todo{Which modes the platform can actually support; slew-rate and Sun-avoidance
+constraints; thermal implications of Sun pointing.}
+
+\subsection{Earth occultation}
+Seen from altitude $h$, Earth occupies a disk of angular radius
+\begin{equation}
+  \rho=\arcsin\!\left(\frac{\RE}{\RE+h}\right)=\SI{67.5}{\degree}
+  \quad(h=\SI{525}{km})
+  \label{eq:rho}
+\end{equation}
+around the nadir $-\vect{r}$. A direction $\vect{s}$ is blocked when
+$\vect{s}\cdot(-\vect{r})\ge\cos\rho$, and Earth's limb enters the field of
+view when the angle between $\vect{a}$ and the nadir is smaller than
+$\rho+\theta_{\mathrm{FoV}}$. \todo{Atmospheric absorption: an effective
+height of $\sim\SI{100}{km}$ increases $\rho$ to $\approx\SI{69.8}{\degree}$;
+discuss the energy dependence and Earth albedo background.}
+
+\subsection{All-sky maps}
+Sky maps use the equal-area Mollweide projection \cite{Snyder1987}: for
+longitude $\lambda$ and latitude $\varphi$,
+\begin{equation}
+  2\theta+\sin2\theta=\pi\sin\varphi,\qquad
+  x=\frac{2\sqrt2}{\pi}\,\lambda\cos\theta,\qquad
+  y=\sqrt2\sin\theta ,
+  \label{eq:mollweide}
+\end{equation}
+solved for $\theta$ by Newton iteration. Longitude increases to the left, as
+seen from inside the sphere. Equatorial and Galactic frames are related by the
+standard J2000 rotation matrix \cite{ESA1997}.
+
+% =====================================================================
+\section{Exposure}
+\label{sec:exposure}
+We define the equivalent on-axis exposure of a source as
+\begin{equation}
+  T_{\mathrm{eq}}=\sum_t R\big(\theta_t\big)\,\Delta t ,
+  \label{eq:exposure}
+\end{equation}
+where $\theta_t$ is the angle between the camera axis and the source, $R$ the
+relative angular response ($R(0)=1$), and the sum excludes times in the SAA
+and times when the source is occulted. The exposure in
+\si{cm^2.s} is $A_{\mathrm{eff}}(E,0)\,T_{\mathrm{eq}}$. By default
+$R=\cos\theta$ for $\theta<\theta_{\mathrm{FoV}}$; a tabulated response can be
+supplied. \todo{Replace with $A_{\mathrm{eff}}(E,\theta)$ from the Geant4
+simulation of the camera; discuss energy dependence and event selection.}
+
+In the web tool, the time in view per day is sampled over one orbit around
+noon UTC for each day of the year (48 samples per orbit), which is sufficient
+because consecutive orbits are nearly identical in the sky frame.
+
+% =====================================================================
+\section{Software}
+\label{sec:software}
+
+\subsection{Overview}
+Table~\ref{tab:software} summarises the three components. \todo{Short
+paragraph on design goals: simple analytic model, few dependencies, identical
+model in Python and JavaScript, reproducible figures.}
+
+\begin{table}[ht]
+\centering
+\caption{Components of the toolkit.}
+\label{tab:software}
+\begin{tabular}{p{0.36\linewidth}p{0.36\linewidth}p{0.18\linewidth}}
+\toprule
+Component & Purpose & Requirements \\
+\midrule
+\texttt{compton\_satellite\_earth\_trajectory.py} &
+  ground track of the first orbits, eclipse and SAA event list, timeline &
+  NumPy, Matplotlib, Cartopy \\
+\texttt{compton\_satellite\_celestial\_trajectory.py} &
+  camera-axis track on the sky (launch day, month by month) &
+  NumPy, Matplotlib \\
+\texttt{trajectory.html} &
+  interactive sky planner with pointing modes, Earth occultation and yearly
+  source visibility & any modern web browser \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Python scripts}
+\todo{Describe inputs (settings block at the top of each script), outputs
+(file names include site and date), and typical run times. Cite NumPy
+\cite{Harris2020}, Matplotlib \cite{Hunter2007} and Cartopy
+\cite{Cartopy}.}
+
+\subsection{Browser application}
+\todo{Describe the interface: date and time sliders, pointing control, all-sky
+map and draggable 3D sphere, status panel, source table with yearly visibility
+strips, settings panel, PNG export. The page is a single self-contained HTML
+file with no external dependencies; settings persist in the browser's local
+storage.}
+
+\begin{figure}[ht]
+\centering
+\figfile{screenshot_web_tool.png}
+\caption{The browser application. \todo{Annotate the main panels.}}
+\label{fig:webtool}
+\end{figure}
+
+\subsection{Deployment}
+\todo{GitHub Pages and self-hosting (any static web server, e.g.\ nginx);
+offline use by opening the file locally.}
+
+% =====================================================================
+\section{Validation}
+\label{sec:validation}
+We checked the implementation against analytic expectations
+(Table~\ref{tab:validation}). \todo{Add a comparison with an SGP4 propagation
+of a representative TLE \cite{Hoots1980} or with the operator's ephemeris
+once available.}
+
+\begin{table}[ht]
+\centering
+\caption{Consistency checks of the orbit and visibility calculations.}
+\label{tab:validation}
+\begin{tabular}{p{0.42\linewidth}p{0.22\linewidth}p{0.26\linewidth}}
+\toprule
+Quantity & Tool result & Expectation \\
+\midrule
+Sun-synchronous inclination at \SI{525}{km} & \SI{97.50}{\degree} & operator value \SI{97.5}{\degree} \\
+Nodal precession & \SI{0.986}{\degree\per d} & $\dot\Omega_\odot$, Eq.~\eqref{eq:sso} \\
+LTDN at all descending nodes (1 day) & 10:30 & input value \\
+Maximum latitude of ground track & \SI{82.5}{\degree} & $180\dg-i$ \\
+Sun visible (Sun-tracking mode) & 64\% of orbit & sunlit fraction from eclipse model, 63--64\% \\
+North celestial pole visible (fixed pointing) & 63\% of orbit & $1-2\rho/360\dg=62.5\%$ \\
+Mid-December Sun position & near Galactic Center & known solar position \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% =====================================================================
+\section{Example results}
+\label{sec:results}
+
+\subsection{First orbits after launch}
+\begin{figure}[ht]
+\centering
+\figfile{fig/compton_sat_first_orbits_map.png}\\[4pt]
+\figfile{fig/compton_sat_first_orbits_timeline.png}
+\caption{Ground track (top) and latitude versus time (bottom) of the first
+three orbits after a launch from Qingdao. Dashed segments: Earth shadow.
+\todo{Update for the final launch site and date.}}
+\label{fig:firstorbits}
+\end{figure}
+\todo{Describe the first orbits: eclipse durations ($\approx\SI{35}{min}$ per
+orbit), first SAA passage, implications for commissioning and high-voltage
+switch-on.}
+
+\subsection{Camera-axis track on the sky}
+\begin{figure}[ht]
+\centering
+\figfile{fig/sky_track_QingDao_20261101_0252UTC.png}\\[4pt]
+\figfile{sky_track_monthly_QingDao_202611_12m.png}
+\caption{Camera-axis track for zenith pointing on the launch day (top) and on
+the first day of each month (bottom). Dots: the Sun on the same dates.}
+\label{fig:skytrack}
+\end{figure}
+\todo{Explain the yearly rotation of the circle and the resulting seasonal
+visibility.}
+
+\subsection{Source visibility}
+Table~\ref{tab:sources} lists the 20 sources included by default: the
+point-like, identified steady sources detected by COMPTEL
+\cite{Schoenfelder2000}, as compiled in Table~5 of \citet{Tsuji2021}, and the
+Galactic Center. Fluxes are taken from Tables~1 and~2 of \citet{Tsuji2021}.
+
+\begin{table}[ht]
+\centering
+\caption{Default source list. Fluxes in units of
+$10^{-11}$\,erg\,cm$^{-2}$\,s$^{-1}$ from \citet{Tsuji2021}: $F_{\mathrm{BAT}}$
+(Swift-BAT, 14--195\,keV) and $F_{\mathrm{LAT}}$ (Fermi-LAT 4FGL-DR2). Dashes:
+not listed in \citet{Tsuji2021}. \todo{Add yearly time in view for zenith and
+alternative pointings, computed with the web tool.}}
+\label{tab:sources}
+\small
+\begin{tabular}{lrrrrl}
+\toprule
+Source & RA [\si{\degree}] & Dec [\si{\degree}] & $F_{\mathrm{BAT}}$ & $F_{\mathrm{LAT}}$ & Note \\
+\midrule
+Crab            &  83.633 & $+22.015$ & 2300 & 16$^{a}$ & \\
+Vela            & 128.836 & $-45.176$ & 18   & 940  & \\
+Geminga         &  98.476 & $+17.770$ & --   & --   & Fermi only \\
+PSR B0656+14    & 104.950 & $+14.239$ & --   & --   & Fermi only \\
+PSR B1055$-$52  & 164.496 & $-52.450$ & --   & --   & Fermi only \\
+PSR B1509$-$58  & 228.481 & $-59.136$ & 26   & 5.3$^{b}$ & \\
+PSR B1951+32    & 298.3   & $+32.89$  & 0.92 & 15   & \\
+Cyg X-1         & 299.590 & $+35.202$ & 1700 & 0.65 & \\
+LS 5039         & 276.6   & $-14.85$  & 3.3  & 27   & \\
+LSI +61 303     &  40.16  & $+61.24$  & 3.2  & 47   & \\
+3C 273          & 187.278 & $+2.052$  & 42   & 11   & \\
+3C 279          & 194.1   & $-5.799$  & 3.9  & 45   & variable \\
+3C 454.3        & 343.491 & $+16.148$ & 16   & 100  & variable \\
+CTA 102         & 338.2   & $+11.71$  & 3.0  & 49   & variable \\
+4C +21.35       & 186.2   & $+21.4$   & 2.5  & 20   & \\
+PKS 0208$-$512  &  32.692 & $-51.017$ & --   & --   & Fermi only \\
+PKS 0528+134    &  82.74  & $+13.57$  & 1.8  & 2.2  & \\
+PKS 1622$-$297  & 246.6   & $-29.86$  & 1.6  & 3.9  & \\
+Cen A           & 201.365 & $-43.019$ & 130  & 6.3  & \\
+Galactic Center & 266.417 & $-29.008$ & 11   & 42   & \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+{\footnotesize $^{a}$ Synchrotron component of the Crab Nebula only.
+$^{b}$ Extended source MSH 15$-$52.
+\todo{Verify the four Fermi-only positions against SIMBAD.}}
+\end{table}
+
+\todo{Discuss the visibility strips: e.g.\ for zenith pointing and a
+\SI{20}{\degree} field of view the Crab is visible mainly in two seasons,
+while sources near the celestial poles are seen most often; compare with
+Sun-tracking and Galactic-Center pointing (time in view and occultation
+fraction).}
+
+\begin{figure}[ht]
+\centering
+\figfile{fig/CCSP_web.png}
+\caption{Days in view over the first year for each source. \todo{Export from
+the web tool or produce with a script.}}
+\label{fig:visibility}
+\end{figure}
+
+\subsection{Exposure maps (optional)}
+\todo{If included: annual exposure map and daily exposure of selected sources
+for the adopted angular response.}
+
+% =====================================================================
+\section{Limitations and future work}
+\label{sec:limits}
+\begin{itemize}
+  \item Idealised circular orbit; no atmospheric drag, so the along-track
+        phase becomes unreliable weeks after launch. Planned: SGP4 with the
+        operator's TLE \cite{Hoots1980}.
+  \item Launch modelled as instantaneous insertion over the launch site.
+  \item Approximate SAA; planned: AP9/AE9 or operator polygon
+        \cite{Ginet2013}.
+  \item Placeholder angular response; planned: Geant4 $A_{\mathrm{eff}}(E,\theta)$.
+  \item Earth occultation by the solid Earth only; atmosphere and albedo
+        background not included.
+  \item Possible LTDN drift for a platform without orbit maintenance.
+  \item \todo{Background model, sensitivity estimates, attitude constraints.}
+\end{itemize}
+
+% =====================================================================
+\section{Summary}
+\label{sec:summary}
+\todo{Three to five sentences restating the tools, the main results and their
+use for mission planning.}
+
+% =====================================================================
+\section*{Code availability}
+The scripts and the browser application are available at
+\url{https://github.com/Eclipsedclaw/compton_satellite_sim}.
+\todo{Add the web address of the hosted planner, a version number (the web
+tool reports its version in the footer), the licence, and optionally a Zenodo
+DOI for the archived release.}
+
+\section*{Acknowledgements}
+\todo{Funding (e.g.\ grant numbers), satellite operator, colleagues.} This work
+made use of NumPy \cite{Harris2020}, Matplotlib \cite{Hunter2007} and Cartopy
+\cite{Cartopy}.
+
+% =====================================================================
+%  References
+%  Entries marked TODO need to be completed or checked before submission.
+% =====================================================================
+\bibliographystyle{elsarticle-num-names}
+\bibliography{references}
+
+\end{document}
