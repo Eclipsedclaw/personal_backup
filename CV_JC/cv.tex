@@ -1,232 +1,24 @@
 %----------------------------------------------------------------------------------------
-% CV -- Jiancheng (J.C.) Zeng
+% CV -- Jiancheng (J.C.) Zeng, English version
 % Based on the "Medium Length Professional CV" template (Trey Hunner / LaTeXTemplates.com);
 % needs resume.cls in the same directory.
 %
 % Build:  latexmk -pdf cv.tex        (runs pdflatex + bibtex as needed)
 %
-% Publications live in publications.bib, talks in talks.bib -- edit those, not this file.
+% Do not put CV text here. Edit:
+%   cv_content.tex    all sections, English and Chinese side by side (shared with cv_chinese.tex)
+%   publications.bib  papers;  talks.bib  talks
+%   cv_preamble.tex   shared layout and bibliography settings
 %----------------------------------------------------------------------------------------
 
 \documentclass{resume}
-\usepackage[dvipsnames]{xcolor}
-\usepackage[left=0.5in,top=0.6in,right=0.6in,bottom=0.6in]{geometry}
 \usepackage[T1]{fontenc}
-\usepackage{xurl}
-\usepackage[colorlinks=true,urlcolor=Blue,linkcolor=Blue]{hyperref}
 
-%----------------------------------------------------------------------------------------
-%	BIBLIOGRAPHY
-%----------------------------------------------------------------------------------------
+\newcommand{\EN}[1]{#1}  % English CV: print \EN{...}
+\newcommand{\ZH}[1]{\ignorespaces}  % drop \ZH{...} and the space after it
 
-\usepackage[
-  backend=bibtex,   % biber is broken on this machine; plain bibtex is enough here
-  style=phys,
-  articletitle=true,
-  biblabel=brackets,
-  eprint=true,
-  sorting=none,        % printed in the order entries appear in the .bib files (keep them newest first)
-  defernumbers=true,   % number each list separately
-  maxnames=1, minnames=1,
-  giveninits=true,
-]{biblatex}
-\addbibresource{publications.bib}
-\addbibresource{talks.bib}
-
-% Bold my name wherever it appears
-\renewcommand*{\mkbibnamefamily}[1]{\ifdefstring{\namepartfamily}{Zeng}{\textbf{#1}}{#1}}
-\renewcommand*{\mkbibnamegiven}[1]{\ifdefstring{\namepartfamily}{Zeng}{\textbf{#1}}{#1}}
-
-% "Contributions:" line under an entry (from the bib `addendum` field)
-\DeclareFieldFormat{addendum}{\textit{Contributions:} #1}
-\renewbibmacro*{addendum+pubstate}{\setunit{\newline}\printfield{addendum}\newunit\printfield{pubstate}}
-\renewcommand*{\finentrypunct}{}  % no period at the end of entries
-% Talks (@misc): bold title / italic venue, date / link. Author is omitted -- it's always me.
-\DeclareFieldFormat[misc]{title}{\textbf{#1}}
-\DeclareFieldFormat[misc]{howpublished}{\textit{#1}}
-\DeclareBibliographyDriver{misc}{%
-  \ifkeyword{invited}{\textbf{Invited talk:} }{}%
-  \printfield{title}\newline
-  \printfield{howpublished}\setunit{\addcomma\space}%
-  \usebibmacro{date}%
-  \iffieldundef{url}{}{\newline\printfield{url}}%
-  \usebibmacro{finentry}}
-
-\setlength{\bibitemsep}{3pt}
-\defbibheading{cvsub}[]{\vspace{2pt}\textit{\textbf{#1}}\par\vspace{1pt}}
-% No visible heading; \leavevmode is needed so the labels of a list placed right
-% after the section's \item[] don't pile up
-\defbibheading{cvnone}[]{\leavevmode\par\vspace{-\baselineskip}}
-
-%----------------------------------------------------------------------------------------
-%	HEADER AND SECTION STYLE
-%----------------------------------------------------------------------------------------
-
-\name{Jiancheng (J.C.) Zeng}
-\address{\\ \href{mailto:JCZeng1412@gmail.com}{JCZeng1412@gmail.com} \\ 857-930-3319 \\ Boston, MA}
-
-% Blue section titles
-\renewenvironment{rSection}[1]{
-  \sectionskip
-  \textcolor{Blue}{\MakeUppercase{\bf #1}}
-  \sectionlineskip
-  \hrule
-  \begin{list}{}{\setlength{\leftmargin}{1.5em}}
-  \item[]
-}{
-  \end{list}
-}
+\input{cv_preamble}
 
 \begin{document}
-\nocite{*}
-
-%----------------------------------------------------------------------------------------
-%	SUMMARY
-%----------------------------------------------------------------------------------------
-
-\begin{rSection}{Summary}
-Ph.D.\ in Physics with a strong background in astroparticle physics, data analysis,
-instrumentation, and collaborative team management. Aspiring to an academic career leading a
-research program in astroparticle physics that bridges physics analysis methods with novel
-instrumentation development for next-generation experiments.
-\end{rSection}
-
-%----------------------------------------------------------------------------------------
-%	POSITIONS
-%----------------------------------------------------------------------------------------
-
-\begin{rSection}{Academic Positions}
-{\bf Postdoctoral Researcher}, Tsung-Dao Lee Institute, Shanghai Jiao Tong University \hfill {\em Jul 2026 -- Present} \\
-{\small State Key Laboratory of Dark Matter Physics; Key Laboratory for Particle Astrophysics and Cosmology (MoE); \\
-Shanghai Key Laboratory for Particle Physics and Cosmology} \hfill Shanghai, China
-\end{rSection}
-
-%----------------------------------------------------------------------------------------
-%	EDUCATION
-%----------------------------------------------------------------------------------------
-
-\begin{rSection}{Education}
-{\bf Northeastern University}, Boston, MA, USA \hfill {\em 2018 -- Present} \\
-Ph.D.\ in Physics, expected Summer 2025 \hfill GPA 3.5/4.0 \\
-Graduate Certificate in Physics
-
-{\bf Sun Yat-sen University}, Guangzhou, Guangdong, China \hfill {\em 2014 -- 2018} \\
-B.S.\ in Physics \hfill GPA 3.2/4.0
-\end{rSection}
-
-%----------------------------------------------------------------------------------------
-%	RESEARCH EXPERIENCE
-%----------------------------------------------------------------------------------------
-
-\begin{rSection}{Research Experience}
-
-\begin{rSubsubsectionTitle}{Graduate Researcher, Northeastern University}{2018 -- Present}{}{}
-\item
-
-  \begin{rSubsubsection}{Gamma-Ray and AntiMatter Survey (GRAMS), NASA APRA Project}{Mar 2021 -- Present}{}{}
-  \item \textit{Leadership: Subsystem Integration Coordinator, GRAMS prototype flight (pGRAMS)}
-  \item Leading collaborative efforts in preparation for the pGRAMS launch scheduled for Fall 2025.
-  \item Designed and fabricated the pGRAMS time projection chamber (TPC) charge-sensitive amplifiers.
-  \item Designed the mechanical CAD of the pGRAMS TPC detector.
-  \item Fabricated the TPC and set up the chamber environment for liquid argon TPC operations.
-  \item Simulated the pGRAMS TPC static electric field.
-  \item Developed Geant4 simulations for GRAMS and the GRAMS antideuteron and antihelium-3 sensitivity.
-  \end{rSubsubsection}
-
-  \begin{rSubsubsection}{General AntiParticle Spectrometer (GAPS), NASA APRA Project}{Mar 2021 -- Present}{}{}
-  \item Assembled the GAPS functional prototype (GFP) at MIT Bates Lab, improvised the GAPS thermal system, and built a simulation model for the GFP.
-  \item Integrated the GAPS payload at MIT Bates Lab, UCB Space Sciences Lab, and Columbia Nevis Labs; assembled the tracker, time-of-flight, and cooling systems.
-  \item Developed the ground cooling system that cools all GAPS detectors to $-40\,^\circ$C.
-  \item Developed software for detector performance visualization.
-  \item Developed the GAPS atmospheric unfolding model and analysis.
-  \end{rSubsubsection}
-
-  \begin{rSubsubsection}{Two-Photon Excitation Microscopy}{Sept 2018 -- Feb 2021}{}{}
-  \item Designed an FPGA-based data acquisition system (DAQ) and data down-sampling algorithm using StellarIP and Vivado, and calibrated 32-channel firmware for the FPGA output; used as the back end of two-photon excitation microscopy scanning for cancer.
-  \end{rSubsubsection}
-
-\end{rSubsubsectionTitle}
-
-\begin{rSubsubsectionTitle}{Undergraduate Researcher, Sun Yat-sen University}{2014 -- 2018}{}{}
-\item
-
-  \begin{rSubsubsection}{Heavy-Flavor Meson Decay Simulation for the PHENIX Experiment}{}{}{}
-  \item Simulated B and D mesons passing through four detector planes, and used the asymmetry of muons detected on the planes to determine the initial meson ratio.
-  \end{rSubsubsection}
-
-  \begin{rSubsubsection}{Galaxies, Cosmology, and Structure Formation Simulation}{}{}{}
-  \item Simulated galaxy formation using GADGET-2.
-  \end{rSubsubsection}
-
-\end{rSubsubsectionTitle}
-
-\end{rSection}
-
-%----------------------------------------------------------------------------------------
-%	PUBLICATIONS  (from publications.bib, split by `keywords`)
-%----------------------------------------------------------------------------------------
-
-\begin{rSection}{Publications}
-\newrefcontext[labelprefix=L]
-\printbibliography[keyword=lead,    heading=cvsub, title={Lead Author}, resetnumbers=true]
-\newrefcontext[labelprefix=C]
-\printbibliography[keyword=contrib, heading=cvsub, title={Contributing Author}, resetnumbers=true]
-\newrefcontext[labelprefix=M]
-\printbibliography[keyword=inprep,  heading=cvsub, title={In Preparation}, resetnumbers=true]
-\end{rSection}
-
-%----------------------------------------------------------------------------------------
-%	TALKS  (from talks.bib)
-%----------------------------------------------------------------------------------------
-
-\begin{rSection}{Talks and Presentations}
-\newrefcontext[labelprefix=T]
-\printbibliography[type=misc, heading=cvnone, resetnumbers=true]
-\end{rSection}
-
-%----------------------------------------------------------------------------------------
-%	TEACHING
-%----------------------------------------------------------------------------------------
-
-\begin{rSection}{Teaching Experience}
-
-\begin{rSubsection}{Teaching Assistant Fellowship, Northeastern University}{2020 -- 2021}{}{}
-\item Teaching Assistant in the Physics Department for two years: taught the Introductory Physics Laboratory (IPL), led the undergraduate physics Interactive Learning Sessions (ILS), and served as grader and course TA for Modern Physics.
-\end{rSubsection}
-
-\begin{rSubsection}{Teaching Assistant, Molecular Imaging}{July 2019}{}{}
-\item TA for Prof.\ Craig S.~Levin (Department of Radiology, Stanford). Lectured on bioluminescence/fluorescence imaging and two-photon microscopy.
-\end{rSubsection}
-
-\begin{rSubsection}{Teaching Assistant, Cosmology and Structure Formation}{July -- Aug 2018}{}{}
-\item TA for Prof.\ Mark Vogelsberger (MIT Kavli Institute for Astrophysics and Space Research). Lectured on calculus and introductory Python programming.
-\end{rSubsection}
-
-\end{rSection}
-
-%----------------------------------------------------------------------------------------
-%	HONORS
-%----------------------------------------------------------------------------------------
-
-\begin{rSection}{Honors}
-``Best Talk,'' Introduction to Physics Research Seminar, Northeastern University \hfill {\em 2022} \\
-Lawrence Award for Excellence in Teaching, Northeastern University \hfill {\em 2020} \\
-Excellent Student Scholarship for academic excellence, Sun Yat-sen University \hfill {\em 2014}
-\end{rSection}
-
-%----------------------------------------------------------------------------------------
-%	SKILLS
-%----------------------------------------------------------------------------------------
-
-\begin{rSection}{Skills}
-\begin{tabular}{@{} >{\bfseries}l @{\hspace{2ex}} p{0.8\textwidth} @{}}
-Computing  & \textit{Programming:} Python, Geant4, ROOT, Bash, MATLAB, Unix, FPGA, Git, MySQL, \LaTeX \\
-           & \textit{Visualization:} Matplotlib, Grafana, HepRApp, MeshLab, Femtet, VNC, Adobe Photoshop, Bambu Studio (3D printing) \\
-           & \textit{Engineering:} SolidWorks, Autodesk Fusion 360, Autodesk Eagle / EasyEDA \\
-           & \textit{Machine learning:} PyTorch \\[3pt]
-Laboratory & \textit{Onsite:} compressor operation and maintenance, piping, cryogenic (LAr, LN$_2$) system operation, crane and gantry operation, strapping and roping \\
-           & \textit{Physics lab:} oscilloscope, lock-in amplifier, PCB population \\
-\end{tabular}
-\end{rSection}
-
+\input{cv_content}
 \end{document}

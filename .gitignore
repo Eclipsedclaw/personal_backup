@@ -1,17 +1,33 @@
+# Rules without a slash match in every folder of the repository.
+
+# LaTeX build outputs (all rebuilt by latexmk / pdflatex / xelatex / bibtex)
 *.aux
-*.fls
-*.pdf
-*.gz
-*.fdb_latexmk
-*.log
-*.out
+*.bbl
+*.bcf
+*-blx.bib
 *.blg
-*.DS_Store
-*.xml
+*.dvi
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.toc
 *.xdv
+*.xml
+*.synctex.gz
+*.gz
+*.abs
+
+# Compiled documents
+*.pdf
+
+# Images: ignored as well; add a figure on purpose with  git add -f <file>
+# (files git already tracks, like JC_thesis_proposal/images/, stay tracked)
 *.png
 *.jpg
 *.jpeg
-*.bbl
-*.synctex.gz
-*.abs
+
+# macOS folder metadata
+*.DS_Store
