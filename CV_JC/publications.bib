@@ -4,12 +4,17 @@
 % Which list an entry goes into is set by `keywords`:
 %   lead    -> Lead-author publications
 %   contrib -> Contributed publications (co-author)
-%   inprep  -> Manuscripts in preparation
+%   inprep  -> Manuscripts in preparation: kept here but not printed (the CV has
+%              no In Preparation list); change to lead or contrib once published
 % `addendum` holds the one-line "Contributions:" note printed under the entry.
 %
 % To add a paper: grab its BibTeX from INSPIRE
 %   https://inspirehep.net/api/literature/<recid>?format=bibtex
 % paste it here, then add `keywords` and `addendum`. Nothing else to edit.
+% Within each list, keep entries newest first (they print in file order).
+% arXiv-only papers: use the article type with `eprint` (as below), never misc --
+% misc is the talk format of the CV and would print the paper as a talk.
+% (No at-signs in these comments: bibtex reads every one as the start of an entry.)
 %-------------------------------------------------------------------------------
 
 %------------------------------ Lead author -----------------------------------
@@ -42,33 +47,74 @@
     addendum      = "Lead author of the conference proceedings.",
 }
 
+@inproceedings{Zeng:2023IU,
+    author        = "Zeng, Jiancheng",
+    title         = "{AntiHelium-3 Search with the GRAMS Experiment}",
+    booktitle     = "{38th International Cosmic Ray Conference (ICRC2023)}",
+    series        = "PoS",
+    volume        = "444",
+    pages         = "1407",
+    year          = "2023",
+    doi           = "10.22323/1.444.1407",
+    keywords      = "lead",
+    addendum      = "Lead author of the conference proceedings.",
+}
+
 %------------------------------ Co-author -------------------------------------
 
+@article{wesslingresnick2026detectionforecastingblazarsmev,
+    author        = "Wessling-Resnick, Timothy and others",
+    title         = "{Detection Forecasting for Blazars at MeV Energies with Fermi-LAT Swift-BAT Cross Match}",
+    year          = "2026",
+    eprint        = "2610.26658",
+    archivePrefix = "arXiv",
+    primaryClass  = "astro-ph.HE",
+    keywords      = "contrib",
+}
+
 @article{TAKASHIMA2026171858,
-	author = "Satoshi Takashima and others",
-	doi = {https://doi.org/10.1016/j.nima.2026.171858},
-	issn = {0168-9002},
-	journal = {Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment},
-	pages = {171858},
-	title = {Low-noise SiPM light readout and ASIC-based charge readout of a liquid argon time projection chamber for MeV gamma-ray measurements},
-	url = {https://www.sciencedirect.com/science/article/pii/S016890022600584X},
-	volume = {1092},
-	year = {2026},
-	bdsk-url-1 = {https://www.sciencedirect.com/science/article/pii/S016890022600584X},
-	bdsk-url-2 = {https://doi.org/10.1016/j.nima.2026.171858},
+    author        = "Takashima, Satoshi and others",
+    title         = "{Low-noise SiPM light readout and ASIC-based charge readout of a liquid argon time projection chamber for MeV gamma-ray measurements}",
+    journal       = "Nucl. Instrum. Meth. A",
+    volume        = "1092",
+    pages         = "171858",
+    year          = "2026",
+    doi           = "10.1016/j.nima.2026.171858",
     keywords      = "contrib",
     addendum      = "Designed and provided the charge readout electronics for the NanoGRAMS project.",
 }
 
 @article{sun2026developmentnovelcomptoncamera,
-    author        = "Pingwei Sun and others",
+    author        = "Sun, Pingwei and others",
     title         = "{Development of A Novel Compton Camera for MeV Gamma-Ray Measurement in Space}",
     year          = "2026",
     eprint        = "2608.21216",
     archivePrefix = "arXiv",
-    primaryClass  = "astro-ph.IM",
+    primaryClass  = "hep-ex",
     keywords      = "contrib",
     addendum      = "Designed and provided the consultation for the development of the novel Compton camera.",
+}
+
+@article{GAPS:2026rda,
+    author        = "Aoyama, Kazutaka and others",
+    collaboration = "GAPS",
+    title         = "{The General Antiparticle Spectrometer (GAPS) Antarctic Balloon Payload}",
+    year          = "2026",
+    eprint        = "2604.19830",
+    archivePrefix = "arXiv",
+    primaryClass  = "astro-ph.IM",
+    keywords      = "contrib",
+}
+
+@techreport{Losekamm:2931063,
+    author        = "Losekamm, M. J. and others",
+    title         = "{Precision Measurement of the Cross-Sections for Inelastic Interactions of Antiprotons and Antideuterons with Nuclei for Cosmic-Ray Research}",
+    institution   = "CERN",
+    address       = "Geneva",
+    number        = "CERN-SPSC-2025-015, SPSC-I-265",
+    year          = "2025",
+    url           = "https://cds.cern.ch/record/2931063",
+    keywords      = "contrib",
 }
 
 @article{Nakajima:2024fgx,
@@ -129,18 +175,41 @@
     addendum      = "Worked on payload construction and simulation modeling.",
 }
 
-% Found on INSPIRE but not yet on the CV -- add `keywords = "contrib"` to list it.
-@article{GAPS:2026rda,
-    author        = "Aoyama, Kazutaka and others",
-    collaboration = "GAPS",
-    title         = "{The General Antiparticle Spectrometer (GAPS) Antarctic Balloon Payload}",
-    year          = "2026",
-    eprint        = "2604.19830",
-    archivePrefix = "arXiv",
-    primaryClass  = "astro-ph.IM",
+@inproceedings{Feldman:2023U2,
+    author        = "Feldman, Sydney Nicole and others",
+    title         = "{The GAPS Time-of-Flight Detector}",
+    booktitle     = "{38th International Cosmic Ray Conference (ICRC2023)}",
+    series        = "PoS",
+    volume        = "444",
+    pages         = "120",
+    year          = "2023",
+    doi           = "10.22323/1.444.0120",
+    keywords      = "contrib",
 }
 
-%------------------------------ In preparation --------------------------------
+@article{aramaki2023gapscontributions38thinternational,
+    author        = "Aramaki, T. and others",
+    title         = "{GAPS contributions to the 38th International Cosmic Ray Conference (Nagoya 2023)}",
+    year          = "2023",
+    eprint        = "2310.10181",
+    archivePrefix = "arXiv",
+    primaryClass  = "astro-ph.HE",
+    keywords      = "contrib",
+}
+
+@inproceedings{Aramaki:2021o5,
+    author        = "Aramaki, Tsuguo and others",
+    title         = "{Overview of the GRAMS (Gamma-Ray AntiMatter Survey) Project}",
+    booktitle     = "{37th International Cosmic Ray Conference (ICRC2021)}",
+    series        = "PoS",
+    volume        = "395",
+    pages         = "653",
+    year          = "2021",
+    doi           = "10.22323/1.395.0653",
+    keywords      = "contrib",
+}
+
+%------------------------ Not printed: in preparation -------------------------
 
 @unpublished{Zeng:inprep-pGRAMS,
     author        = "Zeng, J. and others",

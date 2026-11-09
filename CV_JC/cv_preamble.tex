@@ -1,0 +1,119 @@
+%----------------------------------------------------------------------------------------
+% Shared settings of both CVs (cv.tex and cv_chinese.tex input this file).
+% The language is chosen by the wrapper before this file is read:
+%   \EN{...} prints its text only in the English CV,
+%   \ZH{...} prints its text only in the Chinese CV.
+% CV text does not go here: it lives in cv_content.tex.
+%----------------------------------------------------------------------------------------
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage[left=0.5in,top=0.6in,right=0.6in,bottom=0.6in]{geometry}
+\usepackage{xurl}
+\usepackage{needspace} % keep subheadings with their first entry
+\usepackage[colorlinks=true,urlcolor=Blue,linkcolor=Blue]{hyperref}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY  (publications.bib and talks.bib, in English for both CVs)
+%----------------------------------------------------------------------------------------
+
+\usepackage[
+  backend=bibtex,   % biber is broken on this machine; plain bibtex is enough here
+  style=phys,
+  articletitle=true,
+  biblabel=brackets,
+  eprint=true,
+  sorting=none,        % printed in the order entries appear in the .bib files (keep them newest first)
+  defernumbers=true,   % number each list separately
+  maxnames=1, minnames=1,
+  giveninits=true,
+]{biblatex}
+\addbibresource{publications.bib}
+\addbibresource{talks.bib}
+
+% Bold my name wherever it appears
+\renewcommand*{\mkbibnamefamily}[1]{\ifdefstring{\namepartfamily}{Zeng}{\textbf{#1}}{#1}}
+\renewcommand*{\mkbibnamegiven}[1]{\ifdefstring{\namepartfamily}{Zeng}{\textbf{#1}}{#1}}
+
+% "Contributions:" line under an entry (from the bib `addendum` field, which is in English)
+\DeclareFieldFormat{addendum}{\textit{Contributions:} #1}
+\renewbibmacro*{addendum+pubstate}{\setunit{\newline}\printfield{addendum}\newunit\printfield{pubstate}}
+\renewcommand*{\finentrypunct}{}  % no period at the end of entries
+% arXiv numbers never break across lines: the phys style's format, with the number in a \mbox
+\makeatletter
+\DeclareFieldFormat{eprint:arxiv}{%
+  \ifhyperref
+    {\href{https://arxiv.org/\abx@arxivpath/#1}{%
+        arXiv\addcolon
+        \mbox{\nolinkurl{#1}}%
+        \iffieldundef{eprintclass}
+          {}
+          {\addspace\UrlFont{\mkbibbrackets{\thefield{eprintclass}}}}}}
+    {arXiv\addcolon
+      \mbox{\nolinkurl{#1}}%
+      \iffieldundef{eprintclass}
+        {}
+        {\addspace\UrlFont{\mkbibbrackets{\thefield{eprintclass}}}}}}
+\makeatother
+% ...and a reference line may stretch a little instead of running into the margin
+\AtBeginBibliography{\setlength{\emergencystretch}{1.5em}}
+% Talks (@misc): bold title / italic venue, date / link. Author is omitted -- it's always me.
+\DeclareFieldFormat[misc]{title}{\textbf{#1}}
+\DeclareFieldFormat[misc]{howpublished}{\textit{#1}}
+\DeclareBibliographyDriver{misc}{%
+  \ifkeyword{invited}{\EN{\textbf{Invited talk:} }\ZH{\textbf{特邀报告：}}}{}%
+  \printfield{title}\newline
+  \printfield{howpublished}\setunit{\addcomma\space}%
+  \usebibmacro{date}%
+  \iffieldundef{url}{}{\newline\printfield{url}}%
+  \usebibmacro{finentry}}
+
+\setlength{\bibitemsep}{3pt}
+\defbibheading{cvsub}[]{\needspace{4\baselineskip}\vspace{2pt}\textbf{\EN{\itshape}#1}\par\vspace{1pt}}
+% No visible heading; \leavevmode is needed so the labels of a list placed right
+% after the section's \item[] don't pile up
+\defbibheading{cvnone}[]{\leavevmode\par\vspace{-\baselineskip}}
+
+%----------------------------------------------------------------------------------------
+%	HEADER
+%----------------------------------------------------------------------------------------
+
+% TODO: Chinese name for the Chinese CV, e.g. \ZH{曾XX \quad }Jiancheng (J.C.) Zeng
+\name{Jiancheng (J.C.) Zeng}
+\address{\\ \href{mailto:JCZeng1412@gmail.com}{JCZeng1412@gmail.com} \\ 857-930-3319 \\ \EN{Boston, MA}\ZH{美国马萨诸塞州波士顿}}
+
+%----------------------------------------------------------------------------------------
+%	BUILDING BLOCKS FOR cv_content.tex
+%----------------------------------------------------------------------------------------
+
+% Blue section titles (upper case in English)
+\renewenvironment{rSection}[1]{
+  \sectionskip
+  \textcolor{Blue}{\bf #1}
+  \sectionlineskip
+  \hrule
+  \begin{list}{}{\setlength{\leftmargin}{1.5em}}
+  \item[]
+}{
+  \end{list}
+}
+
+% \begin{cvsection}{English title}{中文标题} ... \end{cvsection}
+% (\needspace: a title never sits alone at the bottom of a page)
+\newenvironment{cvsection}[2]{\needspace{5\baselineskip}\begin{rSection}{\EN{\MakeUppercase{#1}}\ZH{#2}}}{\end{rSection}}
+
+% Comma between fields: ", " in English, "，" in Chinese
+\newcommand{\cvsep}{\EN{, }\ZH{，}}
+
+% \cvposition{job title}{institution}{dates}{small second line}{place}
+\newcommand{\cvposition}[5]{{\bf #1}\cvsep #2 \hfill {\em #3} \\ {\small #4} \hfill #5}
+
+% \cvschool{school}{place}{dates}{degree lines, separated by \\}
+\newcommand{\cvschool}[4]{{\bf #1}\cvsep #2 \hfill {\em #3} \\ #4}
+
+% Keep a group, project or teaching title on the same page as its first bullet
+\BeforeBeginEnvironment{rSubsubsectionTitle}{\needspace{5\baselineskip}}
+\BeforeBeginEnvironment{rSubsubsection}{\needspace{3\baselineskip}}
+\BeforeBeginEnvironment{rSubsection}{\needspace{3\baselineskip}}
+
+% \cvlabel{English label}{中文标签}: italic label at the start of a skills line
+\newcommand{\cvlabel}[2]{\EN{\textit{#1} }\ZH{\textit{#2}}}
