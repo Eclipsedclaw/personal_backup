@@ -24,7 +24,7 @@
   eprint=true,
   sorting=none,        % printed in the order entries appear in the .bib files (keep them newest first)
   defernumbers=true,   % number each list separately
-  maxnames=1, minnames=1,
+  maxnames=2, minnames=2, % first author, then me (see publications.bib)
   giveninits=true,
 ]{biblatex}
 \addbibresource{publications.bib}
@@ -79,7 +79,11 @@
 
 % TODO: Chinese name for the Chinese CV, e.g. \ZH{曾XX \quad }Jiancheng (J.C.) Zeng
 \name{Jiancheng (J.C.) Zeng}
-\address{\\ \href{mailto:JCZeng1412@gmail.com}{JCZeng1412@gmail.com} \\ 857-930-3319 \\ \EN{Boston, MA}\ZH{美国马萨诸塞州波士顿}}
+% TODO: Chinese name for the Chinese CV, e.g. \ZH{曾XX \quad }Jiancheng (J.C.) Zeng
+\name{曾健成 \quad }Jiancheng (J.C.) Zeng
+% Contact lines under the name: one \address per line (at most three); each \\ prints a diamond
+\address{\\ \href{mailto:JCZeng1412@gmail.com}{JCZeng1412@gmail.com} \\ \href{mailto:jczeng@sjtu.edu.cn}{jczeng@sjtu.edu.cn}}
+\address{\\ \href{tel:+8613269205840}{(+86) 132-6920-5840} \\ \href{tel:+18579303319}{(+1) 857-930-3319} \\ \EN{Shanghai, China}\ZH{中国上海}}
 
 %----------------------------------------------------------------------------------------
 %	BUILDING BLOCKS FOR cv_content.tex
