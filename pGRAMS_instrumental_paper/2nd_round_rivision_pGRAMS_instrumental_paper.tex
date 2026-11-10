@@ -544,22 +544,22 @@ Table~\ref{tab:pGRAMS_massbudget} lists the mass of each subsystem.
 % TODO: replace estimates with measured masses
 \begin{table}[width=\linewidth,cols=4,pos=h]
 \small
-\caption{pGRAMS mass budget. Status: M, measured; E, estimated from the CAD model. Contingency (Cont.) is taken by a detailed breakdown sheet}\label{tab:pGRAMS_massbudget}
-\begin{tabular*}{\tblwidth}{@{} LRRL@{} }
+\caption{pGRAMS mass budget. Status: M, measured; E, estimated from the CAD model. Contingency is taken by a detailed breakdown sheet}\label{tab:pGRAMS_massbudget}
+\begin{tabular*}{\tblwidth}{@{} LRR@{} }
 \toprule
-\textbf{Component} & \textbf{Mass (kg)} & \textbf{Cont.\ (kg)} & \textbf{Status} \\
+\textbf{Component} & \textbf{Mass\ (kg)} & \textbf{Contengency\ (kg)} \\
 \midrule
-Cryostat + LAr & 185.0 & 0.0 & M \\
-TPC + internal harness & 12.2 & 0.0 & M \\
-Hub computer box & 9.2 & 0.0 & M \\
-Sealed enclosure & 53.8 & 5.4 & M \\
-Gondola & 208.4 & 10 & E \\
-TOF + MPD & 21.0 & 2.1 & E \\
-Batteries & 43.0 & 4.3 & E \\
-PDU & 44.0 & 4.4 & E \\
+Cryostat + LAr & 176.540 & 5.227 \\
+TPC + internal harness & 12.237 & 1.212 \\
+Hub computer box & 9.150 & 0.605 \\
+Sealed enclosure & 54.606 & 4.659 \\
+Gondola & 210.249 & 10.838 \\
+TOF + MPD & 32.54 & 1.628 \\
+Batteries & 32.250 & 1.613 \\
+PDU & 44.035 & 2.500 \\
 \midrule
-\textbf{Total} & \textbf{576.6} & \textbf{26.2} & \\
-\textbf{Total + cont.} & \textbf{\textcolor{red}{602.8}} & & \\
+\textbf{Total} & \textbf{571.607} & \textbf{28.282}\\
+\textbf{Total + Contengency.} & \textbf{599.889} & \\
 \bottomrule
 \end{tabular*}
 \smallskip
@@ -611,7 +611,7 @@ The outer gondola is the primary load-bearing structure and transfers the load o
 Each of the gondola faces consists of vertical square-tube posts at the corners, two square-tube cross beams angled at $60^{\circ}$, and one horizontal square-tube cross beam.
 The vertical posts contain CNC-machined aluminum inserts for added strength, and the cross beams are joined to them with gusset plates and 9.5~mm (3/8~in) rivets.
 The inner detector tower, which surrounds the cryostat and carries the TOF and MPD, is not part of the load path; its frames are joined with 4.8~mm (3/16~in) rivets, which are lighter than bolted joints.
-\textcolor{red}{[Add the structural verification: e.g., ``A finite-element analysis of the outer frame under the design limit loads of Section~\ref{chap:design} (8~g vertical, 4~g at $45^{\circ}$, and 4~g horizontal) gives a minimum margin of safety of XX, at XX.'']}
+A finite element analysis (FEA) of the gondola structure was performed to verify that the structure can withstand the expected loads and that there are positive margins for all load cases and failure modes considered.
  
 \subsection{Cryostat Design}\label{chap:engineer:cryostat}
 The cryostat sits at the center of the gondola base plate.

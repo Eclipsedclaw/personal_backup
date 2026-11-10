@@ -3,7 +3,11 @@
 % Based on the "Medium Length Professional CV" template (Trey Hunner / LaTeXTemplates.com);
 % needs resume.cls in the same directory.
 %
-% Build:  latexmk -pdf cv.tex        (runs pdflatex + bibtex as needed)
+% Build (run inside CV_JC/; each command also runs bibtex as needed):
+%   latexmk -pdf cv.tex                  English CV -> cv.pdf          (pdflatex)
+%   latexmk -xelatex cv_chinese.tex      Chinese CV -> cv_chinese.pdf  (XeLaTeX, for the Chinese fonts)
+% Build both:  latexmk -pdf cv.tex && latexmk -xelatex cv_chinese.tex
+% Clean up:    latexmk -c cv.tex cv_chinese.tex     (removes aux files, keeps the PDFs)
 %
 % Do not put CV text here. Edit:
 %   cv_content.tex    all sections, English and Chinese side by side (shared with cv_chinese.tex)
